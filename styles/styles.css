@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Josefin";
+  src: url("../fonts/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Michroma";
+  src: url("../fonts/Michroma/Michroma-Regular.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin";
+  color: #fffbfa;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Michroma";
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Michroma";
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+html {
+  height: 100%;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f0d0c, #22201f, #22201f);
+  overflow: hidden;
+}
+html .body {
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  position: relative;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+html .body::-webkit-scrollbar {
+  display: none;
+}
+html .body header {
+  width: 100%;
+  height: 7vh;
+  padding: 8px 16px;
+  position: fixed;
+  top: 0;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border-bottom: 1px solid #53514f;
+  justify-content: space-between;
+}
+html .body header #menuButton {
+  display: none;
+}
+html .body header a {
+  height: 100%;
+}
+html .body header a img {
+  height: 100%;
+}
+html .body header nav {
+  height: 100%;
+  gap: 32px;
+}
+html .body header nav a {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  html .body header #menuButton {
+    display: block;
+  }
+}
+html .body section {
+  height: 100%;
+  width: 100%;
+  padding-top: 7vh;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  justify-content: center;
+}
+html .body section h1 {
+  border: none;
+}
+html .body #featured {
+  background: url("../images/garage.jpeg") center/cover no-repeat;
+  background-attachment: fixed;
+  gap: 0;
+}
+html .body #featured .text,
+html .body #featured .image {
+  height: 100%;
+}
+html .body #featured .text {
+  width: 30%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5vw;
+}
+html .body #featured .text h1, html .body #featured .text h2 {
+  text-shadow: 3px 3px 0px #22201f;
+}
+html .body #featured .image {
+  width: 70%;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+html .body #featured .image img {
+  height: 95%;
+}
+html .body #featured img {
+  height: 80vh;
+}
+html .body footer {
+  border-radius: 0;
+  background: #0f0d0c;
+  width: 100%;
+  height: 20vh;
+}

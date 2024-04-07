@@ -1,0 +1,55 @@
+Formy practice project, I want to display data about vehicles dynamically using JS. So in vehicles.json i need to define data about several Futuristic Luxurious Armored Camper EV Trucks:
+
+1. Name: Terra Nomad
+Description: A sleek, stealthy beast that conquers any terrain in style.
+
+Specs:
+Range: 800km (500 miles)
+Armor: Ballistic composite shell
+Interior: Customizable luxury living space with panoramic sunroof
+
+
+2. Name: Aurora
+Description: Glimmering with advanced tech, Aurora offers a luxurious journey under the stars.
+
+Specs:
+Range: 1000km (620 miles)
+Armor: Self-repairing nanofiber coating
+Interior: Holographic entertainment system, AI-powered climate control
+
+3. Name: Titan's Rest
+Description: A fortress on wheels, Titan's Rest provides ultimate protection and comfort.
+
+Specs:
+Range: 600km (370 miles)
+Armor: Military-grade composite armor plating
+Interior: Blast-proof windows, hidden weapon storage
+
+4. Name: Zephyr
+Description: Light and agile, Zephyr glides through landscapes with luxurious ease.
+
+Specs:
+Range: 700km (430 miles)
+Armor: Lightweight, high-tensile steel shell
+Interior: Fold-out balcony, rooftop solar panels for extended off-grid living
+
+5. Name: Oasis
+Description: A haven on wheels, Oasis offers a luxurious escape to any environment.
+
+Specs:
+Range: 500km (310 miles)
+Armor: Weatherproof and impact-resistant hull
+Interior: Water purification system, onboard hydroponic garden
+
+6. Name: Nova
+Description: Blazing a trail into the future, Nova is a luxurious symbol of sustainable exploration.
+
+Specs:
+Range: 1200km (750 miles)
+Armor: Bio-composite shell, self-regenerating from natural resources
+Interior: Recycled materials throughout, advanced waste management system
+
+
+And also, for each vehicle I need to assign an image which will be displayed on the  webpage.
+
+In designing the web page, I intend to keep it as simple as possible. Given that it is dedicated to showcasing ArmaTrek's products, what should I name the different few sections of the webpage?

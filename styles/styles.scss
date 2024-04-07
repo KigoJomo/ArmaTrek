@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Josefin";
+  src: url("../fonts/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Michroma";
+  src: url("../fonts/Michroma/Michroma-Regular.ttf") format("truetype");
+}
+
+$--black: #0f0d0c;
+$--tint: #0f0d0c6e;
+$--dark-gray: #22201f;
+$--linear-gradient: linear-gradient(135deg, #0f0d0c, #22201f, #22201f);
+$--light-gray: #53514f;
+$--white: #fffbfa;
+$--orange: #e74d1e;
+$--border: 1px solid $--light-gray;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin";
+  color: $--white;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Michroma";
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: "Michroma";
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+}
+
+p{
+  font-size: 18px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+html {
+  height: 100%;
+  width: 100vw;
+  background: $--linear-gradient;
+  overflow: hidden;
+
+  .body {
+    width: 100%;
+    height: 100%;
+    gap: 0;
+    position: relative;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    header {
+      width: 100%;
+      height: 7vh;
+      padding: 8px 16px;
+      position: fixed;
+      top: 0;
+      backdrop-filter: blur(3px);
+      border-bottom: 1px solid $--light-gray;
+
+      justify-content: space-between;
+
+      #menuButton {
+        display: none;
+      }
+      a {
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+
+      nav {
+        height: 100%;
+        gap: 32px;
+
+        a {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1px;
+        }
+      }
+
+      // .links{
+      // }
+
+      @media (max-width: 768px) {
+        #menuButton {
+          display: block;
+        }
+      }
+    }
+    section {
+      height: 100%;
+      width: 100%;
+      padding-top: 7vh;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      justify-content: center;
+      h1 {
+        border: none;
+      }
+    }
+    #featured {
+      background: url("../images/garage.jpeg") center/cover no-repeat;
+      background-attachment: fixed;
+      gap: 0;
+      .text,
+      .image {
+        height: 100%;
+        // border: $--border;
+      }
+
+      .text {
+        width: 30%;
+        backdrop-filter: blur(5px);
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 5vw;
+        h1,h2 {
+          text-shadow: 3px 3px 0px $--dark-gray;
+        }
+      }
+
+      .image {
+        width: 70%;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        img{
+          height: 95%;
+        }
+      }
+
+      img {
+        height: 80vh;
+      }
+    }
+    footer {
+      border-radius: 0;
+      background: $--black;
+      width: 100%;
+      height: 20vh;
+    }
+  }
+}

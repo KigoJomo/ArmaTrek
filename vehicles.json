@@ -1,0 +1,64 @@
+{
+  "vehicles": [
+    {
+      "name": "Terra Nomad",
+      "description": "A sleek, stealthy beast that conquers any terrain in style.",
+      "specs": {
+        "range": "800km (500 miles)",
+        "armor": "Ballistic composite shell",
+        "interior": "Customizable luxury living space with panoramic sunroof"
+      },
+      "image": "terra_nomad.jpg"
+    },
+    {
+      "name": "Aurora",
+      "description": "Glimmering with advanced tech, Aurora offers a luxurious journey under the stars.",
+      "specs": {
+        "range": "1000km (620 miles)",
+        "armor": "Self-repairing nanofiber coating",
+        "interior": "Holographic entertainment system, AI-powered climate control"
+      },
+      "image": "aurora.jpg"
+    },
+    {
+        "name": "Titan's Rest",
+        "description": "A fortress on wheels, Titan's Rest provides ultimate protection and comfort.",
+        "specs": {
+            "range": "600km (370 miles)",
+            "armor": "Military-grade composite armor plating",
+            "interior": "Blast-proof windows, hidden weapon storage"
+        },
+        "image": "titan's_rest.jpg"
+    },
+    {
+        "name": "Zephyr",
+        "description": "Light and agile, Zephyr glides through landscapes with luxurious ease.",
+        "specs": {
+            "range": "700km (430 miles)",
+            "armor": "Lightweight, high-tensile steel shell",
+            "interior": "Fold-out balcony, rooftop solar panels for extended off-grid living"
+        },
+        "image": "zephyr.jpg"
+    },
+    {
+        "name": "oasis",
+        "description": "A haven on wheels, Oasis offers a luxurious escape to any environment.",
+        "specs":{
+            "range": "500km (310 miles)",
+            "armor": "Weatherproof and impact-resistant hull",
+            "interior": "Water purification system, onboard hydroponic garden"
+        },
+        "image": "oasis.jpg"
+    },
+    {
+        "name": "nova",
+        "description": "Blazing a trail into the future, Nova is a luxurious symbol of sustainable exploration.",
+        "specs": {
+            "range": "1200km (750 miles)",
+            "armor": "Bio-composite shell, self-regenerating from natural resources",
+            "interior": "Recycled materials throughout, advanced waste management system"
+        },
+        "image": "nova.jpg"
+    }
+  ]
+}
