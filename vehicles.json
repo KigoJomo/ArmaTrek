@@ -8,7 +8,7 @@
         "armor": "Ballistic composite shell",
         "interior": "Customizable luxury living space with panoramic sunroof"
       },
-      "image": "terra_nomad.jpg"
+      "image": "terra_nomad.png"
     },
     {
       "name": "Aurora",
@@ -18,7 +18,7 @@
         "armor": "Self-repairing nanofiber coating",
         "interior": "Holographic entertainment system, AI-powered climate control"
       },
-      "image": "aurora.jpg"
+      "image": "aurora.png"
     },
     {
         "name": "Titan's Rest",
@@ -28,17 +28,17 @@
             "armor": "Military-grade composite armor plating",
             "interior": "Blast-proof windows, hidden weapon storage"
         },
-        "image": "titan's_rest.jpg"
+        "image": "titan's_rest.png"
     },
     {
-        "name": "Zephyr",
-        "description": "Light and agile, Zephyr glides through landscapes with luxurious ease.",
+        "name": "Leva",
+        "description": "Light and agile, Leva glides through landscapes with luxurious ease.",
         "specs": {
             "range": "700km (430 miles)",
             "armor": "Lightweight, high-tensile steel shell",
             "interior": "Fold-out balcony, rooftop solar panels for extended off-grid living"
         },
-        "image": "zephyr.jpg"
+        "image": "leva.png"
     },
     {
         "name": "oasis",
@@ -48,7 +48,7 @@
             "armor": "Weatherproof and impact-resistant hull",
             "interior": "Water purification system, onboard hydroponic garden"
         },
-        "image": "oasis.jpg"
+        "image": "oasis.png"
     },
     {
         "name": "nova",
@@ -58,7 +58,7 @@
             "armor": "Bio-composite shell, self-regenerating from natural resources",
             "interior": "Recycled materials throughout, advanced waste management system"
         },
-        "image": "nova.jpg"
+        "image": "nova.png"
     }
   ]
 }

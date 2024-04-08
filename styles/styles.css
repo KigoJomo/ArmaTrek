@@ -6,11 +6,41 @@
   font-family: "Michroma";
   src: url("../fonts/Michroma/Michroma-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Josefin";
+  font-family: "Poppins";
   color: #fffbfa;
 }
 
@@ -29,13 +59,32 @@ h2 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 200;
 }
 
-button {
+.button, button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.button::after, button::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  width: 0%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #0f0d0c;
+  transition: all 0.75s ease;
+}
+.button:hover::after, button:hover::after {
+  width: 200%;
 }
 
 a {
@@ -81,6 +130,7 @@ html .body header {
   height: 7vh;
   padding: 8px 16px;
   position: fixed;
+  z-index: 10;
   top: 0;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
@@ -103,58 +153,252 @@ html .body header nav {
 html .body header nav a {
   display: flex;
   align-items: center;
-  text-transform: uppercase;
   font-size: 12px;
-  font-weight: 800;
   letter-spacing: 1px;
 }
 @media (max-width: 768px) {
   html .body header #menuButton {
     display: block;
   }
+  html .body header nav {
+    position: absolute;
+    border: none;
+    flex-direction: column;
+    width: 50vw;
+    height: 46.5vh;
+    top: 100%;
+    left: 0;
+    background: #0f0d0c;
+    justify-content: space-evenly;
+    gap: 0;
+    transition: all 0.5s ease;
+  }
+  html .body header nav:nth-of-type(2) {
+    top: calc(100% + 46.5vh);
+  }
+  html .body header nav a {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  html .body header nav::before, html .body header nav::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+  html .body header nav::before {
+    left: 100%;
+    background: rgba(15, 13, 12, 0.6235294118);
+  }
+  html .body header nav::after {
+    height: 200%;
+    left: 0;
+    background: #0f0d0c;
+    z-index: 9;
+  }
+  html .body header .navClosed {
+    left: -54vw;
+  }
+  html .body header .navClosed::before, html .body header .navClosed::after {
+    left: -54vw;
+  }
 }
 html .body section {
   height: 100%;
   width: 100%;
-  padding-top: 7vh;
+  padding: 24px;
+  padding-top: calc(7vh + 16px);
   scroll-snap-align: start;
   flex-shrink: 0;
   justify-content: center;
+  overflow: hidden;
 }
 html .body section h1 {
   border: none;
+}
+@media (max-width: 768px) {
+  html .body section h1 {
+    font-size: 1.8rem;
+  }
 }
 html .body #featured {
   background: url("../images/garage.jpeg") center/cover no-repeat;
   background-attachment: fixed;
   gap: 0;
+  padding: 0;
+  padding-top: calc(7vh + 16px);
+  position: relative;
 }
-html .body #featured .text,
-html .body #featured .image {
+html .body #featured .vehicles,
+html .body #featured .numbers {
   height: 100%;
-}
-html .body #featured .text {
-  width: 30%;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+}
+html .body #featured .vehicles {
+  gap: 0;
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+}
+html .body #featured .vehicles .vehicle {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
   justify-content: center;
+  gap: 0;
+  position: relative;
+}
+html .body #featured .vehicles .vehicle img {
+  max-width: 80%;
+  max-height: 80%;
+  transition: all 0.5s ease;
+  filter: drop-shadow(-2rem 1rem 1rem #0f0d0c);
+}
+html .body #featured .vehicles .vehicle img:hover {
+  transform: scale(1.05);
+}
+html .body #featured .vehicles .vehicle .details {
+  position: absolute;
+  height: 100%;
+  left: 2%;
+  bottom: 0%;
+  padding: 24px 24px;
   align-items: flex-start;
-  padding-left: 5vw;
+  justify-content: space-between;
 }
-html .body #featured .text h1, html .body #featured .text h2 {
-  text-shadow: 3px 3px 0px #22201f;
+html .body #featured .vehicles .vehicle .details .top {
+  align-items: flex-start;
+  gap: 0;
 }
-html .body #featured .image {
-  width: 70%;
+html .body #featured .vehicles .vehicle .details .top * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+html .body #featured .vehicles .vehicle .details .top p {
+  max-width: 40vw;
+}
+html .body #featured .vehicles .vehicle .details ul {
+  width: 100%;
+  border-left: 2px solid #fffbfa;
+  padding: 24px;
+  list-style: circle;
+}
+html .body #featured .vehicles .vehicle .details ul li {
+  gap: 8px;
+}
+html .body #featured .vehicles .vehicle .details ul li span {
+  width: 10%;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+html .body #featured .vehicles .vehicle .details ul li p {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+html .body #featured .buttons {
+  position: absolute;
+  z-index: 2;
+  bottom: 5%;
+  right: 5%;
+  gap: 0;
+}
+html .body #featured .buttons button {
+  border: 1px solid #fffbfa;
+  height: 48px;
+  aspect-ratio: 16/9;
+}
+html .body #featured .buttons .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+html .body #featured .buttons #prevBtn {
+  background: url("../images/left_arrowAsset 3.png") center/40% no-repeat;
+}
+html .body #featured .buttons #nextBtn {
+  background: url("../images/right_arrowAsset 2.png") center/40% no-repeat;
+}
+html .body #featured .numbers {
+  width: 10%;
   justify-content: center;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(0);
+          backdrop-filter: blur(0);
 }
-html .body #featured .image img {
-  height: 95%;
+html .body #featured .numbers .active {
+  background-color: #e74d1e;
 }
-html .body #featured img {
-  height: 80vh;
+html .body #featured .numbers .button {
+  height: 2.5rem;
+  font-size: 1.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fffbfa;
+}
+@media (max-width: 786px) {
+  html .body #featured {
+    flex-direction: column;
+    padding: 0;
+    padding-top: 7vh;
+  }
+  html .body #featured h1 {
+    font-size: 2rem;
+  }
+  html .body #featured .vehicles {
+    width: 100%;
+    height: 100%;
+  }
+  html .body #featured .vehicles .vehicle img {
+    max-height: 80%;
+    max-width: 100%;
+  }
+  html .body #featured .vehicles .vehicle .details {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    padding: 0 24px;
+    padding-top: 32px;
+  }
+  html .body #featured .vehicles .vehicle .details .top p {
+    max-width: 90vw;
+    font-size: 0.8rem;
+  }
+  html .body #featured .vehicles .vehicle .details ul {
+    width: 100%;
+    padding: 0 16px;
+  }
+  html .body #featured .vehicles .vehicle .details ul * {
+    font-size: 0.8rem;
+  }
+  html .body #featured .vehicles .vehicle .details ul li {
+    width: 100%;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  html .body #featured .vehicles .vehicle .details ul li span {
+    width: 15%;
+  }
+  html .body #featured .vehicles .vehicle .details ul li p {
+    width: 80%;
+  }
+  html .body #featured .numbers {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+    display: none;
+  }
+  html .body #featured .buttons {
+    bottom: 3%;
+  }
 }
 html .body footer {
   border-radius: 0;

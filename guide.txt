@@ -53,3 +53,42 @@ Interior: Recycled materials throughout, advanced waste management system
 And also, for each vehicle I need to assign an image which will be displayed on the  webpage.
 
 In designing the web page, I intend to keep it as simple as possible. Given that it is dedicated to showcasing ArmaTrek's products, what should I name the different few sections of the webpage?
+
+
+
+fetch('vehicles.json')
+  .then(response => response.json())
+  .then(data => {
+    const vehicles = data.vehicles;
+    const container = document.getElementById('vehicle-container');
+
+    vehicles.forEach(vehicle => {
+      const card = document.createElement('div');
+      card.classList.add('vehicle-card');
+
+      const image = document.createElement('img');
+      image.src = `images/${vehicle.image}`;
+      card.appendChild(image);
+
+      const name = document.createElement('h2');
+      name.textContent = vehicle.name;
+      card.appendChild(name);
+
+      const description = document.createElement('p');
+      description.textContent = vehicle.description;
+      card.appendChild(description);
+
+      const specs = document.createElement('ul');
+      for (const [key, value] of Object.entries(vehicle.specs)) {
+        const specItem = document.createElement('li');
+        specItem.textContent = `${key}: ${value}`;
+        specs.appendChild(specItem);
+      }
+      card.appendChild(specs);
+
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });

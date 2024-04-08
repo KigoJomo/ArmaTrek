@@ -13,29 +13,33 @@
 <body class="body column">
     <header class="row">
         <button id="menuButton" class="material-symbols-outlined">menu</button>
+        <nav class="row navClosed">
+            <a href="#featured">featured</a>
+            <a href="#shipping">shipping</a>
+        </nav>
         <a href="./index.html">
             <img src="./images/ArmaTrek.png" alt="">
         </a>
-        <nav class="row">
-            <a href="#featured">featured</a>
-            <a href="#shipping">shipping</a>
+        <nav class="row navClosed">
             <a href="#showrooms">showrooms</a>
             <a href="#contact">contact</a>
         </nav>
-        <div class="links row">
-            <a href="#">login</a>
-            <a href="#">sign up</a>
-        </div>
     </header>
 
     <section id="featured" class="row">
-        <div class="text column">
-            <h1>Terra Nomad</h1>
-            <p>A sleek, stealthy beast that conquers any terrain in style.</p>
-            <h2>specs</h2>
+        <div class="vehicles row" id="vehicles">
         </div>
-        <div class="image column">
-            <img src="./images/cars/nova.png" alt="">
+        <div class="buttons row">
+            <button id="prevBtn" class="disabled"></button>
+            <button id="nextBtn"></button>
+        </div>
+        <div class="numbers column">
+            <a href="#vehicle1" class="button active">1</a>
+            <a href="#vehicle2" class="button">2</a>
+            <a href="#vehicle3" class="button">3</a>
+            <a href="#vehicle4" class="button">4</a>
+            <a href="#vehicle5" class="button">5</a>
+            <a href="#vehicle6" class="button">6</a>
         </div>
     </section>
 
@@ -51,10 +55,8 @@
         <h1>contact</h1>
     </section>
     <footer></footer>
-    <!-- featured -->
-    <!-- shipping -->
-    <!-- showrooms -->
-    <!-- contact -->
+
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
