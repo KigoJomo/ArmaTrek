@@ -52,12 +52,12 @@ fetch("vehicles.json")
   });
 
 
-console.log(vehicleCards.length);
-
 function scrollVehicle(card) {
   const vehicleIndex = card - 1;
-  const vehicleToView = document.getElementById(`vehicle${card}`)
+  const vehicleToView = document.getElementById(`vehicle${card}`);
+  vehicleToView.classList.remove("emerge");
   vehicleToView.scrollIntoView();
+  vehicleToView.classList.add("emerge");
   buttons.forEach((button) => {
     button.classList.remove("active");
   });

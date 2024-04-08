@@ -92,3 +92,20 @@ fetch('vehicles.json')
   .catch(error => {
     console.error('Error fetching data:', error);
   });
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ArmaTrek - Manufacturer and distributor of armoured, luxury EV camping off-road trucks. Explore the world with confidence.">
+    <meta name="keywords" content="ArmaTrek, armored trucks, luxury EV, camping off-road, futuristic vehicles">
+    <meta name="author" content="Your Name">
+    <title>ArmaTrek - Explore with Confidence</title>
+</head>
+<body>
+    <!-- Your website content here -->
+</body>
+</html>
