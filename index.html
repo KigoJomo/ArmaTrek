@@ -34,33 +34,69 @@
         </nav>
     </header>
 
-    <section id="featured" class="row">
-        <div class="vehicles row" id="vehicles">
-        </div>
-        <div class="buttons row">
-            <button id="prevBtn" class="disabled"></button>
-            <button id="nextBtn"></button>
-        </div>
-        <div id="numbersContainer" class="numbers column">
-        </div>
-    </section>
+    <main class="column">
+        <section id="featured" class="row">
+            <div class="vehicles row" id="vehicles">
+            </div>
+            <div class="buttons row">
+                <button id="prevBtn" class="disabled"></button>
+                <button id="nextBtn"></button>
+            </div>
+            <div id="numbersContainer" class="numbers column">
+            </div>
+        </section>
 
-    <section id="shipping" class="column">
-        <h1>shipping</h1>
-        <div id="map" style="height: 350px; width:350px; border-radius: 50%;"></div>
-        <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
-    </section>
+        <section id="shipping" class="row">
+            <div id="map"></div>
+            <div class="right column">
+                <h1>shipping</h1>
+                <p>Select a shipping address for your car</p>
+                <form action="" method="post" class="column">
+                    <div class="fieldwrapper column">
+                        <label for="">select a country</label>
+                        <select name="" id="" required>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                            <option value="">option 3</option>
+                            <option value="">option 4</option>
+                            <option value="">option 5</option>
+                        </select>
+                    </div>
+                    <div class="fieldwrapper column">
+                        <label for="">which city is nearest to you?</label>
+                        <select name="" id="" required>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                            <option value="">option 3</option>
+                            <option value="">option 4</option>
+                            <option value="">option 5</option>
+                        </select>
+                    </div>
+                    <div class="fieldwrapper column">
+                        <label for="">choose a warehouse to pick up your vehicle</label>
+                        <select name="" id="" required>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                            <option value="">option 3</option>
+                            <option value="">option 4</option>
+                            <option value="">option 5</option>
+                        </select>
+                    </div>
+                    <button id="proceed">proceed <img src="./images/right_arrowAsset 2.png" alt=""></button>
+                </form>
+            </div>
+        </section>
 
-    <section id="showrooms" class="column">
-        <h1>showrooms</h1>
-        <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
-    </section>
+        <section id="showrooms" class="column">
+            <h1>showrooms</h1>
+            <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
+        </section>
 
-    <section id="contact" class="column">
-        <h1>contact</h1>
-        <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
-    </section>
-    <footer></footer>
+        <section id="contact" class="column">
+            <h1>contact</h1>
+            <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
+        </section>
+    </main>
 
     <script src="./scripts/index.js"></script>
 </body>

@@ -41,7 +41,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins";
-  color: #fffbfa;
+  color: #fafcff;
 }
 
 h1 {
@@ -69,10 +69,24 @@ button {
   border: none;
   cursor: pointer;
   position: relative;
+  padding: 16px 32px;
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
   overflow: hidden;
+}
+.button::before,
+button::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 1%;
+  aspect-ratio: 1;
+  background: transparent;
+  border-radius: 50%;
+  border: 1000px solid #e74d1e;
 }
 .button::after,
 button::after {
@@ -82,7 +96,8 @@ button::after {
   width: 0%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: #0f0d0c;
+  background-color: #03080e;
+  opacity: 0.5;
   transition: all 0.75s ease;
 }
 .button:hover::after,
@@ -95,7 +110,7 @@ a {
   text-transform: capitalize;
 }
 
-.column {
+.column, .row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,30 +119,30 @@ a {
 }
 
 .row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 24px;
+  flex-direction: row;
 }
 
 html {
   height: 100%;
   width: 100vw;
-  background: linear-gradient(135deg, #0f0d0c, #22201f, #22201f);
-  overflow: hidden;
+  background: linear-gradient(135deg, #0c0d0f, #141416, #141416);
 }
+html body,
 html .body {
   width: 100%;
   height: 100%;
   gap: 0;
   position: relative;
+  overflow-x: hidden;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
+html body::-webkit-scrollbar,
 html .body::-webkit-scrollbar {
   display: none;
 }
+html body header,
 html .body header {
   width: 100%;
   height: 7vh;
@@ -135,24 +150,29 @@ html .body header {
   position: fixed;
   z-index: 10;
   top: 0;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  border-bottom: 1px solid #53514f;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-bottom: 1px solid #4f5153;
   justify-content: space-between;
 }
+html body header #menuButton,
 html .body header #menuButton {
   display: none;
 }
+html body header a,
 html .body header a {
   height: 100%;
 }
+html body header a img,
 html .body header a img {
   height: 100%;
 }
+html body header nav,
 html .body header nav {
   height: 100%;
   gap: 32px;
 }
+html body header nav a,
 html .body header nav a {
   display: flex;
   align-items: center;
@@ -160,9 +180,11 @@ html .body header nav a {
   letter-spacing: 1px;
 }
 @media (max-width: 768px) {
+  html body header #menuButton,
   html .body header #menuButton {
     display: block;
   }
+  html body header nav,
   html .body header nav {
     position: absolute;
     border: none;
@@ -171,67 +193,94 @@ html .body header nav a {
     height: 46.5vh;
     top: 100%;
     left: 0;
-    background: #0f0d0c;
+    background: #03080e;
     justify-content: space-evenly;
     gap: 0;
     transition: all 0.5s ease;
   }
+  html body header nav:nth-of-type(2),
   html .body header nav:nth-of-type(2) {
     top: calc(100% + 46.5vh);
   }
+  html body header nav a,
   html .body header nav a {
     z-index: 10;
     width: 100%;
     height: 100%;
     justify-content: center;
   }
-  html .body header nav::before, html .body header nav::after {
+  html body header nav::before, html body header nav::after,
+  html .body header nav::before,
+  html .body header nav::after {
     position: absolute;
     content: "";
     height: 100%;
     width: 100%;
     top: 0;
   }
+  html body header nav::before,
   html .body header nav::before {
     left: 100%;
-    background: rgba(15, 13, 12, 0.6235294118);
+    background: rgba(12, 13, 15, 0.6235294118);
   }
+  html body header nav::after,
   html .body header nav::after {
     height: 200%;
     left: 0;
-    background: #0f0d0c;
+    background: #03080e;
     z-index: 9;
   }
+  html body header .navClosed,
   html .body header .navClosed {
     left: -54vw;
   }
-  html .body header .navClosed::before, html .body header .navClosed::after {
+  html body header .navClosed::before, html body header .navClosed::after,
+  html .body header .navClosed::before,
+  html .body header .navClosed::after {
     left: -54vw;
   }
 }
-html .body section {
+html body main,
+html .body main {
+  gap: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+html body main::-webkit-scrollbar,
+html .body main::-webkit-scrollbar {
+  display: none;
+}
+html body main section,
+html .body main section {
   height: 100%;
   width: 100%;
   padding: 24px;
-  padding-top: calc(7vh + 16px);
+  padding-top: calc(7vh + 24px);
   scroll-snap-align: start;
   flex-shrink: 0;
   justify-content: center;
   overflow: hidden;
 }
-html .body section h1 {
+html body main section h1,
+html .body main section h1 {
   border: none;
 }
 @media (max-width: 768px) {
-  html .body section h1 {
+  html body main section h1,
+  html .body main section h1 {
     font-size: 1.8rem;
   }
 }
-html .body section a {
+html body main section a,
+html .body main section a {
   text-decoration: underline;
   color: #e74d1e;
 }
-html .body #featured {
+html body main #featured,
+html .body main #featured {
   background: url("../images/garage.jpeg") center/cover no-repeat;
   background-attachment: fixed;
   gap: 0;
@@ -239,19 +288,23 @@ html .body #featured {
   padding-top: calc(7vh + 16px);
   position: relative;
 }
-html .body #featured .vehicles,
-html .body #featured .numbers {
+html body main #featured .vehicles,
+html body main #featured .numbers,
+html .body main #featured .vehicles,
+html .body main #featured .numbers {
   height: 100%;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
-html .body #featured .vehicles {
+html body main #featured .vehicles,
+html .body main #featured .vehicles {
   gap: 0;
   width: 90%;
   overflow: hidden;
   position: relative;
 }
-html .body #featured .vehicles .vehicle {
+html body main #featured .vehicles .vehicle,
+html .body main #featured .vehicles .vehicle {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
@@ -262,16 +315,19 @@ html .body #featured .vehicles .vehicle {
   gap: 0;
   position: relative;
 }
-html .body #featured .vehicles .vehicle img {
+html body main #featured .vehicles .vehicle img,
+html .body main #featured .vehicles .vehicle img {
   max-width: 80%;
   max-height: 80%;
   transition: all 0.5s ease;
-  filter: drop-shadow(-2rem 1rem 1rem #0f0d0c);
+  filter: drop-shadow(-2rem 1rem 1rem #03080e);
 }
-html .body #featured .vehicles .vehicle img:hover {
+html body main #featured .vehicles .vehicle img:hover,
+html .body main #featured .vehicles .vehicle img:hover {
   transform: scale(1.05);
 }
-html .body #featured .vehicles .vehicle .details {
+html body main #featured .vehicles .vehicle .details,
+html .body main #featured .vehicles .vehicle .details {
   position: absolute;
   height: 100%;
   left: 0%;
@@ -280,35 +336,47 @@ html .body #featured .vehicles .vehicle .details {
   align-items: flex-start;
   justify-content: space-between;
 }
-html .body #featured .vehicles .vehicle .details .top {
+html body main #featured .vehicles .vehicle .details .top,
+html .body main #featured .vehicles .vehicle .details .top {
   align-items: flex-start;
   gap: 0;
 }
-html .body #featured .vehicles .vehicle .details .top * {
+html body main #featured .vehicles .vehicle .details .top *,
+html .body main #featured .vehicles .vehicle .details .top * {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
-html .body #featured .vehicles .vehicle .details .top p {
+html body main #featured .vehicles .vehicle .details .top p,
+html .body main #featured .vehicles .vehicle .details .top p {
   max-width: 40vw;
 }
-html .body #featured .vehicles .vehicle .details ul {
+html body main #featured .vehicles .vehicle .details ul,
+html .body main #featured .vehicles .vehicle .details ul {
   width: 100%;
-  border-left: 2px solid #fffbfa;
-  padding: 24px;
+  border-left: 8px solid #e74d1e;
+  border-radius: 8px;
+  padding: 8px 24px;
   list-style: circle;
 }
-html .body #featured .vehicles .vehicle .details ul li {
+html body main #featured .vehicles .vehicle .details ul li,
+html .body main #featured .vehicles .vehicle .details ul li {
   gap: 8px;
 }
-html .body #featured .vehicles .vehicle .details ul li span {
+html body main #featured .vehicles .vehicle .details ul li span,
+html .body main #featured .vehicles .vehicle .details ul li span {
   width: 10%;
   text-transform: capitalize;
   font-weight: 800;
 }
-html .body #featured .vehicles .vehicle .details ul li p {
+html body main #featured .vehicles .vehicle .details ul li p,
+html .body main #featured .vehicles .vehicle .details ul li p {
   width: -moz-fit-content;
   width: fit-content;
+}
+html body main #featured .vehicles .vehicle .details ul button,
+html .body main #featured .vehicles .vehicle .details ul button {
+  margin-top: 16px;
 }
 @keyframes slidein {
   0% {
@@ -328,7 +396,8 @@ html .body #featured .vehicles .vehicle .details ul li p {
     }
   }
 }
-html .body #featured .vehicles .emerge img {
+html body main #featured .vehicles .emerge img,
+html .body main #featured .vehicles .emerge img {
   animation: slidein 1s ease;
 }
 @keyframes pop {
@@ -339,70 +408,94 @@ html .body #featured .vehicles .emerge img {
     left: 0%;
   }
 }
-html .body #featured .vehicles .emerge .details {
+html body main #featured .vehicles .emerge .details,
+html .body main #featured .vehicles .emerge .details {
   animation: pop 0.5s ease;
 }
-html .body #featured .buttons {
+html body main #featured .buttons,
+html .body main #featured .buttons {
   position: absolute;
   z-index: 2;
   bottom: 5%;
   right: 10%;
   gap: 0;
 }
-html .body #featured .buttons button {
-  border: 1px solid #fffbfa;
+html body main #featured .buttons button,
+html .body main #featured .buttons button {
+  border: 1px solid #fafcff;
   height: 48px;
   aspect-ratio: 16/9;
 }
-html .body #featured .buttons .disabled {
+html body main #featured .buttons button::before,
+html .body main #featured .buttons button::before {
+  display: none;
+}
+html body main #featured .buttons .disabled,
+html .body main #featured .buttons .disabled {
   pointer-events: none;
   opacity: 0.3;
 }
-html .body #featured .buttons #prevBtn {
+html body main #featured .buttons #prevBtn,
+html .body main #featured .buttons #prevBtn {
   background: url("../images/left_arrowAsset 3.png") center/40% no-repeat;
 }
-html .body #featured .buttons #nextBtn {
+html body main #featured .buttons #nextBtn,
+html .body main #featured .buttons #nextBtn {
   background: url("../images/right_arrowAsset 2.png") center/40% no-repeat;
 }
-html .body #featured .numbers {
+html body main #featured .numbers,
+html .body main #featured .numbers {
   width: 10%;
   justify-content: center;
   -webkit-backdrop-filter: blur(0);
           backdrop-filter: blur(0);
 }
-html .body #featured .numbers .active {
-  background-color: #e74d1e;
-}
-html .body #featured .numbers .button {
-  color: #fffbfa;
+html body main #featured .numbers .button,
+html .body main #featured .numbers .button {
+  color: #fafcff;
+  background-color: transparent;
   text-decoration: none;
   height: 2.5rem;
-  font-size: 1.25rem;
   aspect-ratio: 1;
+  font-size: 1.25rem;
+  padding: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fffbfa;
+  border: 1px solid #fafcff;
+}
+html body main #featured .numbers .button::before,
+html .body main #featured .numbers .button::before {
+  display: none;
+}
+html body main #featured .numbers .active,
+html .body main #featured .numbers .active {
+  background-color: #e74d1e;
 }
 @media (max-width: 786px) {
-  html .body #featured {
+  html body main #featured,
+  html .body main #featured {
     flex-direction: column;
     padding: 0;
     padding-top: 7vh;
   }
-  html .body #featured h1 {
+  html body main #featured h1,
+  html .body main #featured h1 {
     font-size: 2rem;
   }
-  html .body #featured .vehicles {
+  html body main #featured .vehicles,
+  html .body main #featured .vehicles {
     width: 100%;
     height: 100%;
   }
-  html .body #featured .vehicles .vehicle img {
+  html body main #featured .vehicles .vehicle img,
+  html .body main #featured .vehicles .vehicle img {
     max-height: 80%;
     max-width: 100%;
   }
-  html .body #featured .vehicles .vehicle .details {
+  html body main #featured .vehicles .vehicle .details,
+  html .body main #featured .vehicles .vehicle .details {
     top: 0;
     left: 0;
     width: 100%;
@@ -410,41 +503,144 @@ html .body #featured .numbers .button {
     padding: 0 24px;
     padding-top: 32px;
   }
-  html .body #featured .vehicles .vehicle .details .top p {
+  html body main #featured .vehicles .vehicle .details .top p,
+  html .body main #featured .vehicles .vehicle .details .top p {
     max-width: 90vw;
     font-size: 0.8rem;
   }
-  html .body #featured .vehicles .vehicle .details ul {
+  html body main #featured .vehicles .vehicle .details ul,
+  html .body main #featured .vehicles .vehicle .details ul {
     width: 100%;
     padding: 0 16px;
   }
-  html .body #featured .vehicles .vehicle .details ul * {
+  html body main #featured .vehicles .vehicle .details ul *,
+  html .body main #featured .vehicles .vehicle .details ul * {
     font-size: 0.7rem;
   }
-  html .body #featured .vehicles .vehicle .details ul li {
+  html body main #featured .vehicles .vehicle .details ul li,
+  html .body main #featured .vehicles .vehicle .details ul li {
     width: 100%;
     align-items: flex-start;
     gap: 16px;
   }
-  html .body #featured .vehicles .vehicle .details ul li span {
+  html body main #featured .vehicles .vehicle .details ul li span,
+  html .body main #featured .vehicles .vehicle .details ul li span {
     width: 15%;
   }
-  html .body #featured .vehicles .vehicle .details ul li p {
+  html body main #featured .vehicles .vehicle .details ul li p,
+  html .body main #featured .vehicles .vehicle .details ul li p {
     width: 85%;
   }
-  html .body #featured .numbers {
+  html body main #featured .numbers,
+  html .body main #featured .numbers {
     width: 100%;
     height: 10%;
     flex-direction: row;
     display: none;
   }
-  html .body #featured .buttons {
+  html body main #featured .buttons,
+  html .body main #featured .buttons {
     bottom: 3%;
   }
 }
-html .body footer {
-  border-radius: 0;
-  background: #0f0d0c;
+html body main #shipping,
+html .body main #shipping {
+  background-color: #03080e;
+}
+html body main #shipping #map,
+html body main #shipping .right,
+html .body main #shipping #map,
+html .body main #shipping .right {
+  height: 100%;
+  width: 50%;
+}
+html body main #shipping #map,
+html .body main #shipping #map {
+  position: relative;
+  cursor: grab;
+}
+html body main #shipping #map .mapboxgl-control-container,
+html .body main #shipping #map .mapboxgl-control-container {
+  display: none;
+}
+html body main #shipping #map:after,
+html .body main #shipping #map:after {
+  position: absolute;
+  content: "";
+  height: 100%;
   width: 100%;
-  height: 20vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, transparent, transparent, #03080e, #03080e);
+  pointer-events: none;
+}
+html body main #shipping .right,
+html .body main #shipping .right {
+  border: none;
+}
+html body main #shipping .right p,
+html .body main #shipping .right p {
+  margin-bottom: 32px;
+}
+html body main #shipping .right form,
+html .body main #shipping .right form {
+  width: 80%;
+  height: 80%;
+  gap: 10%;
+  border-top: 1px solid #4f5153;
+  padding: 24px 32px;
+  padding-top: 48px;
+}
+html body main #shipping .right form .fieldwrapper,
+html .body main #shipping .right form .fieldwrapper {
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+}
+html body main #shipping .right form .fieldwrapper *,
+html .body main #shipping .right form .fieldwrapper * {
+  text-transform: capitalize;
+}
+html body main #shipping .right form .fieldwrapper label,
+html .body main #shipping .right form .fieldwrapper label {
+  font-size: 0.8rem;
+  font-weight: 200;
+  opacity: 0.7;
+}
+html body main #shipping .right form .fieldwrapper select,
+html .body main #shipping .right form .fieldwrapper select {
+  width: 100%;
+  padding: 8px 24px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #4f5153;
+}
+html body main #shipping .right form .fieldwrapper select:focus,
+html .body main #shipping .right form .fieldwrapper select:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #e74d1e;
+}
+html body main #shipping .right form .fieldwrapper select option,
+html .body main #shipping .right form .fieldwrapper select option {
+  background: #03080e;
+}
+html body main #shipping .right form .fieldwrapper select option:hover,
+html .body main #shipping .right form .fieldwrapper select option:hover {
+  background: #03080e;
+}
+html body main #shipping .right form button,
+html .body main #shipping .right form button {
+  width: 100%;
+  background-color: #e74d1e;
+}
+html body main #shipping .right form button img,
+html .body main #shipping .right form button img {
+  height: 12px;
+  width: 24px;
+}
+html body main #shipping .right form button:hover,
+html .body main #shipping .right form button:hover {
+  background-color: #03080e;
+  border: 1px solid #4f5153;
 }

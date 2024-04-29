@@ -53,6 +53,7 @@ function getVehicles() {
                             <span>interior</span>
                             <p>${vehicle.specs.interior}</p>
                         </li>
+                        <button class="button buyCar" id="buyCar${index}">order now</button>
                     </ul>`;
 
           card.appendChild(image);
