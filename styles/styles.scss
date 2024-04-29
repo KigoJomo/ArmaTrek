@@ -369,7 +369,7 @@ html {
         position: absolute;
         z-index: 2;
         bottom: 5%;
-        right: 5%;
+        right: 10%;
         gap: 0;
         button {
           border: $--border-white;
@@ -378,7 +378,7 @@ html {
         }
         .disabled {
           pointer-events: none;
-          opacity: 0.5;
+          opacity: 0.3;
         }
         #prevBtn {
           background: url("../images/left_arrowAsset\ 3.png") center/40%

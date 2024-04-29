@@ -346,7 +346,7 @@ html .body #featured .buttons {
   position: absolute;
   z-index: 2;
   bottom: 5%;
-  right: 5%;
+  right: 10%;
   gap: 0;
 }
 html .body #featured .buttons button {
@@ -356,7 +356,7 @@ html .body #featured .buttons button {
 }
 html .body #featured .buttons .disabled {
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 html .body #featured .buttons #prevBtn {
   background: url("../images/left_arrowAsset 3.png") center/40% no-repeat;
