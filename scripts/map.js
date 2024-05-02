@@ -71,6 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // console.log(continent.countries[0].name);
       countrySelector.innerHTML = "";
+      citySelector.innerHTML = "";
+      warehouseSelector.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.text = "Select a country";
+      placeholder.setAttribute("disabled", "");
+      placeholder.setAttribute("selected", "");
+
+      countrySelector.appendChild(placeholder);
       continent.countries.forEach(country => {
         const option = document.createElement("option");
         option.value = country.name;
@@ -98,6 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // console.log(country.cities);
       citySelector.innerHTML = "";
+      warehouseSelector.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.text = "Select a city";
+      placeholder.setAttribute("disabled", "");
+      placeholder.setAttribute("selected", "");
+
+      citySelector.appendChild(placeholder);
       country.cities.forEach((city) => {
         const option = document.createElement("option");
         option.value = city.name;
@@ -129,6 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // console.log(city.warehouses);
       warehouseSelector.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.text = "Select a Warehouse";
+      placeholder.setAttribute("disabled", "");
+      placeholder.setAttribute("selected", "");
+
+      warehouseSelector.appendChild(placeholder);
       city.warehouses.forEach((warehouse) => {
         // console.log(warehouse.name);
         const option = document.createElement("option");
@@ -155,10 +176,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const warehouse = city.warehouses.find((warehouse) => warehouse.name === selectedWarehouse);
 
       map.easeTo({
-        zoom: 18,
-        pitch: 100,
-        duration: 2000,
+        zoom: 15,
         center: convertCoordinates(warehouse.coordinates),
+        pitch: 80,
+        duration: 2000,
       });
     }
 
@@ -175,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     warehouseSelector.addEventListener("change", () => {
       zoomToWareHouse();
+      console.log("Warehouse selected");
     });
 
   })
