@@ -1,0 +1,436 @@
+{
+  "continents": [
+    {
+      "name": "Africa",
+      "coordinates": "-5.736839938457524, 33.729631992552385",
+      "countries": [
+        {
+          "name": "Nigeria",
+          "coordinates": "9.6381727218244, 7.845832144438947",
+          "cities": [
+            {
+              "name": "Lagos",
+              "coordinates": "6.5244, 3.3792",
+              "warehouses": [
+                {"name": "Sunrise Storage", "coordinates": "6.5244, 3.3792"},
+                {"name": "Urban Vault", "coordinates": "6.5244, 3.3792"},
+                {"name": "Harbor Depot", "coordinates": "6.5244, 3.3792"}
+              ]
+            },
+            {
+              "name": "Abuja",
+              "coordinates": "9.0579, 7.4951",
+              "warehouses": [
+                {"name": "Metro Warehouse", "coordinates": "9.0579, 7.4951"},
+                {"name": "Capital Cache", "coordinates": "9.0579, 7.4951"},
+                {"name": "Eagle's Nest", "coordinates": "9.0579, 7.4951"}
+              ]
+            },
+            {
+              "name": "Kano",
+              "coordinates": "11.9994, 8.5914",
+              "warehouses": [
+                {"name": "Savannah Storehouse", "coordinates": "11.9994, 8.5914"},
+                {"name": "Golden Grain Depot", "coordinates": "11.9994, 8.5914"},
+                {"name": "Desert Oasis Storage", "coordinates": "11.9994, 8.5914"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "South Africa",
+          "coordinates": "-30.728705443966497, 24.643663961481117",
+          "cities": [
+            {
+              "name": "Johannesburg",
+              "coordinates": "-26.2041, 28.0473",
+              "warehouses": [
+                {"name": "Diamond Depot", "coordinates": "-26.2041, 28.0473"},
+                {"name": "Golden Gate Storage", "coordinates": "-26.2041, 28.0473"},
+                {"name": "Safari Supply", "coordinates": "-26.2041, 28.0473"}
+              ]
+            },
+            {
+              "name": "Cape Town",
+              "coordinates": "-33.9249, 18.4241",
+              "warehouses": [
+                {"name": "Table Mountain Warehouse", "coordinates": "-33.9249, 18.4241"},
+                {"name": "Atlantic Arsenal", "coordinates": "-33.9249, 18.4241"},
+                {"name": "Oceanic Outpost", "coordinates": "-33.9249, 18.4241"}
+              ]
+            },
+            {
+              "name": "Durban",
+              "coordinates": "-29.8587, 31.0218",
+              "warehouses": [
+                {"name": "Zulu Zone Storage", "coordinates": "-29.8587, 31.0218"},
+                {"name": "Port Precinct", "coordinates": "-29.8587, 31.0218"},
+                {"name": "Rainbow Repository", "coordinates": "-29.8587, 31.0218"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "coordinates": "37.30161042817055, 101.4062499861563",
+      "countries": [
+        {
+          "name": "China",
+          "coordinates": "34.663825790304806, 103.66784494660563",
+          "cities": [
+            {
+              "name": "Beijing",
+              "coordinates": "39.9042, 116.4074",
+              "warehouses": [
+                {"name": "Forbidden Fortress", "coordinates": "39.9042, 116.4074"},
+                {"name": "Great Wall Warehouse", "coordinates": "39.9042, 116.4074"},
+                {"name": "Silk Road Storage", "coordinates": "39.9042, 116.4074"}
+              ]
+            },
+            {
+              "name": "Shanghai",
+              "coordinates": "31.2304, 121.4737",
+              "warehouses": [
+                {"name": "Pearl Harbor Warehouse", "coordinates": "31.2304, 121.4737"},
+                {"name": "Dragon Den Depot", "coordinates": "31.2304, 121.4737"},
+                {"name": "Jade Junction", "coordinates": "31.2304, 121.4737"}
+              ]
+            },
+            {
+              "name": "Guangzhou",
+              "coordinates": "23.1291, 113.2644",
+              "warehouses": [
+                {"name": "Canton Cache", "coordinates": "23.1291, 113.2644"},
+                {"name": "Tea Trade Terminal", "coordinates": "23.1291, 113.2644"},
+                {"name": "Pearl River Repository", "coordinates": "23.1291, 113.2644"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "India",
+          "coordinates": "23.073543329688018, 79.49792330954415",
+          "cities": [
+            {
+              "name": "Delhi",
+              "coordinates": "28.7041, 77.1025",
+              "warehouses": [
+                {"name": "Taj Treasure Trove", "coordinates": "28.7041, 77.1025"},
+                {"name": "Lotus Lair", "coordinates": "28.7041, 77.1025"},
+                {"name": "Mughal Market", "coordinates": "28.7041, 77.1025"}
+              ]
+            },
+            {
+              "name": "Mumbai",
+              "coordinates": "19.0760, 72.8777",
+              "warehouses": [
+                {"name": "Gateway Granary", "coordinates": "19.0760, 72.8777"},
+                {"name": "Bollywood Base", "coordinates": "19.0760, 72.8777"},
+                {"name": "Marine Marvel", "coordinates": "19.0760, 72.8777"}
+              ]
+            },
+            {
+              "name": "Bangalore",
+              "coordinates": "12.9716, 77.5946",
+              "warehouses": [
+                {"name": "Silicon Storage", "coordinates": "12.9716, 77.5946"},
+                {"name": "Garden Granary", "coordinates": "12.9716, 77.5946"},
+                {"name": "Tech Terrace", "coordinates": "12.9716, 77.5946"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "coordinates": "55.40563012069285, 17.70999634196708",
+      "countries": [
+        {
+          "name": "France",
+          "coordinates": "46.62537452800719, 2.606995897966813",
+          "cities": [
+            {
+              "name": "Paris",
+              "coordinates": "48.8566, 2.3522",
+              "warehouses": [
+                {"name": "Eiffel Emporium", "coordinates": "48.8566, 2.3522"},
+                {"name": "Louvre Logistics", "coordinates": "48.8566, 2.3522"},
+                {"name": "Montmartre Market", "coordinates": "48.8566, 2.3522"}
+              ]
+            },
+            {
+              "name": "Marseille",
+              "coordinates": "43.2965, 5.3698",
+              "warehouses": [
+                {"name": "Mediterranean Depot", "coordinates": "43.2965, 5.3698"},
+                {"name": "Provence Warehouse", "coordinates": "43.2965, 5.3698"},
+                {"name": "Port Pantry", "coordinates": "43.2965, 5.3698"}
+              ]
+            },
+            {
+              "name": "Lyon",
+              "coordinates": "45.7640, 4.8357",
+              "warehouses": [
+                {"name": "Rhône Repository", "coordinates": "45.7640, 4.8357"},
+                {"name": "Silk City Storehouse", "coordinates": "45.7640, 4.8357"},
+                {"name": "Lumière Locker", "coordinates": "45.7640, 4.8357"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Germany",
+          "coordinates": "51.157369139613806, 10.692933318365567",
+          "cities": [
+            {
+              "name": "Berlin",
+              "coordinates": "52.5200, 13.4050",
+              "warehouses": [
+                {"name": "Brandenburg Bunker", "coordinates": "52.5200, 13.4050"},
+                {"name": "Checkpoint Cache", "coordinates": "52.5200, 13.4050"},
+                {"name": "Spree Storehouse", "coordinates": "52.5200, 13.4050"}
+              ]
+            },
+            {
+              "name": "Hamburg",
+              "coordinates": "53.5511, 9.9937",
+              "warehouses": [
+                {"name": "Elbe Emporium", "coordinates": "53.5511, 9.9937"},
+                {"name": "Port Pantry", "coordinates": "53.5511, 9.9937"},
+                {"name": "Alster Arsenal", "coordinates": "53.5511, 9.9937"}
+              ]
+            },
+            {
+              "name": "Munich",
+              "coordinates": "48.1351, 11.5820",
+              "warehouses": [
+                {"name": "Bavarian Bunker", "coordinates": "48.1351, 11.5820"},
+                {"name": "Oktoberfest Outlet", "coordinates": "48.1351, 11.5820"},
+                {"name": "Danube Depot", "coordinates": "48.1351, 11.5820"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "North America",
+      "coordinates": "56.065191669924445, -97.34375012459326",
+      "countries": [
+        {
+          "name": "United States",
+          "coordinates": "39.6614875739387, -100.60316662192044",
+          "cities": [
+            {
+              "name": "New York",
+              "coordinates": "40.7128, -74.0060",
+              "warehouses": [
+                {"name": "Empire Depot", "coordinates": "40.7128, -74.0060"},
+                {"name": "Big Apple Bunker", "coordinates": "40.7128, -74.0060"},
+                {"name": "Liberty Logistics", "coordinates": "40.7128, -74.0060"}
+              ]
+            },
+            {
+              "name": "Los Angeles",
+              "coordinates": "34.0522, -118.2437",
+              "warehouses": [
+                {"name": "Hollywood Hangar", "coordinates": "34.0522, -118.2437"},
+                {"name": "Pacific Palace", "coordinates": "34.0522, -118.2437"},
+                {"name": "Sunset Storage", "coordinates": "34.0522, -118.2437"}
+              ]
+            },
+            {
+              "name": "Chicago",
+              "coordinates": "41.8781, -87.6298",
+              "warehouses": [
+                {"name": "Windy Warehouse", "coordinates": "41.8781, -87.6298"},
+                {"name": "Midwest Depot", "coordinates": "41.8781, -87.6298"},
+                {"name": "Lakefront Locker", "coordinates": "41.8781, -87.6298"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Canada",
+          "coordinates": "60.48605563058115, -111.8454613685393",
+          "cities": [
+            {
+              "name": "Toronto",
+              "coordinates": "43.6511, -79.3470",
+              "warehouses": [
+                {"name": "Maple Warehouse", "coordinates": "43.6511, -79.3470"},
+                {"name": "Northern Nexus", "coordinates": "43.6511, -79.3470"},
+                {"name": "Ontario Outlet", "coordinates": "43.6511, -79.3470"}
+              ]
+            },
+            {
+              "name": "Montreal",
+              "coordinates": "45.5017, -73.5673",
+              "warehouses": [
+                {"name": "Mount Royal Depot", "coordinates": "45.5017, -73.5673"},
+                {"name": "Quebec Quarters", "coordinates": "45.5017, -73.5673"},
+                {"name": "Saint Lawrence Storage", "coordinates": "45.5017, -73.5673"}
+              ]
+            },
+            {
+              "name": "Vancouver",
+              "coordinates": "49.2827, -123.1207",
+              "warehouses": [
+                {"name": "Pacific Port", "coordinates": "49.2827, -123.1207"},
+                {"name": "British Columbia Bunker", "coordinates": "49.2827, -123.1207"},
+                {"name": "Coastal Cache", "coordinates": "49.2827, -123.1207"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "South America",
+      "coordinates": "-4.755126039070874, -50.268920374607774",
+      "countries": [
+        {
+          "name": "Brazil",
+          "coordinates": "-8.02349965549039, -55.565238760571",
+          "cities": [
+            {
+              "name": "Sao Paulo",
+              "coordinates": "-23.5505, -46.6333",
+              "warehouses": [
+                {"name": "Samba Storage", "coordinates": "-23.5505, -46.6333"},
+                {"name": "Paulista Pantry", "coordinates": "-23.5505, -46.6333"},
+                {"name": "Amazon Arsenal", "coordinates": "-23.5505, -46.6333"}
+              ]
+            },
+            {
+              "name": "Rio de Janeiro",
+              "coordinates": "-22.9068, -43.1729",
+              "warehouses": [
+                {"name": "Copacabana Cache", "coordinates": "-22.9068, -43.1729"},
+                {"name": "Maracanã Depot", "coordinates": "-22.9068, -43.1729"},
+                {"name": "Sugarloaf Storehouse", "coordinates": "-22.9068, -43.1729"}
+              ]
+            },
+            {
+              "name": "Brasilia",
+              "coordinates": "-15.8267, -47.9218",
+              "warehouses": [
+                {"name": "Cerrado Cache", "coordinates": "-15.8267, -47.9218"},
+                {"name": "Capital Citadel", "coordinates": "-15.8267, -47.9218"},
+                {"name": "Brazilian Bunker", "coordinates": "-15.8267, -47.9218"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Argentina",
+          "coordinates": "-35.04378520880133, -64.62013949504872",
+          "cities": [
+            {
+              "name": "Buenos Aires",
+              "coordinates": "-34.6037, -58.3816",
+              "warehouses": [
+                {"name": "Tango Terminal", "coordinates": "-34.6037, -58.3816"},
+                {"name": "Pampas Pantry", "coordinates": "-34.6037, -58.3816"},
+                {"name": "Porteño Pantry", "coordinates": "-34.6037, -58.3816"}
+              ]
+            },
+            {
+              "name": "Cordoba",
+              "coordinates": "-31.4201, -64.1888",
+              "warehouses": [
+                {"name": "Sierras Storage", "coordinates": "-31.4201, -64.1888"},
+                {"name": "Andes Arsenal", "coordinates": "-31.4201, -64.1888"},
+                {"name": "Gaucho Granary", "coordinates": "-31.4201, -64.1888"}
+              ]
+            },
+            {
+              "name": "Rosario",
+              "coordinates": "-32.9442, -60.6505",
+              "warehouses": [
+                {"name": "Rio Parana Repository", "coordinates": "-32.9442, -60.6505"},
+                {"name": "Plains Pantry", "coordinates": "-32.9442, -60.6505"},
+                {"name": "Rosarino Repository", "coordinates": "-32.9442, -60.6505"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oceania",
+      "coordinates": "-30, 140",
+      "countries": [
+        {
+          "name": "Australia",
+          "coordinates": "-24.743198509440855, 134.08254819834946",
+          "cities": [
+            {
+              "name": "Sydney",
+              "coordinates": "-33.8688, 151.2093",
+              "warehouses": [
+                {"name": "Opera Outlet", "coordinates": "-33.8688, 151.2093"},
+                {"name": "Harbour Haven", "coordinates": "-33.8688, 151.2093"},
+                {"name": "Down Under Depot", "coordinates": "-33.8688, 151.2093"}
+              ]
+            },
+            {
+              "name": "Melbourne",
+              "coordinates": "-37.8136, 144.9631",
+              "warehouses": [
+                {"name": "Vic Vault", "coordinates": "-37.8136, 144.9631"},
+                {"name": "Yarra Yard", "coordinates": "-37.8136, 144.9631"},
+                {"name": "Southern Stockpile", "coordinates": "-37.8136, 144.9631"}
+              ]
+            },
+            {
+              "name": "Brisbane",
+              "coordinates": "-27.4698, 153.0251",
+              "warehouses": [
+                {"name": "Riverbank Repository", "coordinates": "-27.4698, 153.0251"},
+                {"name": "Queensland Quarters", "coordinates": "-27.4698, 153.0251"},
+                {"name": "Sunshine State Storage", "coordinates": "-27.4698, 153.0251"}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "New Zealand",
+          "coordinates": "-42.72793564510247, 172.40286032110876",
+          "cities": [
+            {
+              "name": "Auckland",
+              "coordinates": "-36.8485, 174.7633",
+              "warehouses": [
+                {"name": "Harbour Hangar", "coordinates": "-36.8485, 174.7633"},
+                {"name": "Kiwi Cache", "coordinates": "-36.8485, 174.7633"},
+                {"name": "Maori Market", "coordinates": "-36.8485, 174.7633"}
+              ]
+            },
+            {
+              "name": "Wellington",
+              "coordinates": "-41.2865, 174.7762",
+              "warehouses": [
+                {"name": "Windward Warehouse", "coordinates": "-41.2865, 174.7762"},
+                {"name": "Hilltop Haven", "coordinates": "-41.2865, 174.7762"},
+                {"name": "Capital Cache", "coordinates": "-41.2865, 174.7762"}
+              ]
+            },
+            {
+              "name": "Christchurch",
+              "coordinates": "-43.5321, 172.6362",
+              "warehouses": [
+                {"name": "Garden Gateway", "coordinates": "-43.5321, 172.6362"},
+                {"name": "Canterbury Cache", "coordinates": "-43.5321, 172.6362"},
+                {"name": "Southern Storehouse", "coordinates": "-43.5321, 172.6362"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

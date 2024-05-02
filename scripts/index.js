@@ -7,6 +7,7 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const menuButton = document.getElementById("menuButton");
 const navs = document.querySelectorAll("nav");
+const orderBtns = document.querySelectorAll(".buyCar");
 
 //function to fetch vehicles
 function getVehicles() {
@@ -53,7 +54,7 @@ function getVehicles() {
                             <span>interior</span>
                             <p>${vehicle.specs.interior}</p>
                         </li>
-                        <button class="button buyCar" id="buyCar${index}">order now</button>
+                        <button class="buyCar button" id="buyCar${index}">order now</button>
                     </ul>`;
 
           card.appendChild(image);
@@ -78,9 +79,9 @@ function scrollVehicles(index, direction) {
     vehicleInView >= 1 &&
     vehicleInView <= buttons.length
   ) {
-    if (vehicleInView === 1 && direction===-1) {
+    if (vehicleInView === 1 && direction === -1) {
       vehicleInView = 1;
-    } else if (vehicleInView === buttons.length && direction ===1) {
+    } else if (vehicleInView === buttons.length && direction === 1) {
       vehicleInView = buttons.length;
     } else {
       vehicleInView += direction;
@@ -117,30 +118,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     const btnIndex = parseInt(button.innerHTML);
     button.addEventListener("click", () => scrollVehicles(btnIndex, undefined));
   });
+
   prevBtn.addEventListener("click", () => scrollVehicles(undefined, -1));
-    nextBtn.addEventListener("click", () => scrollVehicles(undefined, 1));
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft") {
-        // View the previous vehicle card when left arrow key is pressed
-        scrollVehicles(undefined, -1);
-      } else if (event.key === "ArrowRight") {
-        // View the next vehicle card when right arrow key is pressed
-        scrollVehicles(undefined, 1);
-      }
+  nextBtn.addEventListener("click", () => scrollVehicles(undefined, 1));
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowLeft") {
+      // View the previous vehicle card when left arrow key is pressed
+      scrollVehicles(undefined, -1);
+    } else if (event.key === "ArrowRight") {
+      // View the next vehicle card when right arrow key is pressed
+      scrollVehicles(undefined, 1);
+    }
+  });
+
+  orderBtns.forEach((orderBtn) => {
+    orderBtn.addEventListener("click", () => {
+      console.log('Button clicked');
     });
+  });
+
 });
 
-
-// Event listener to toggle the menu open/close state
 menuButton.addEventListener("click", openOrCloseMenu);
-// Event listener for each navigation element to close the menu when clicked
+
 navs.forEach((nav) => {
   nav.addEventListener("click", openOrCloseMenu);
 });
 
-// Function to toggle the menu open/close state
 function openOrCloseMenu() {
-  // Toggle the "navClosed" class on all navigation elements
   navs.forEach((nav) => {
     nav.classList.toggle("navClosed");
   });
