@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formattedCoordinates = { lat: lat, lng: lng };
       return formattedCoordinates;
     }
-
+    // 1
     function updateCountrySelect() {
       selectedRegion = regionSelector.value;
       if (selectedRegion === "") {
@@ -63,8 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       map.easeTo({
-        zoom: 1, // Desired zoom level
-        duration: 2000,
+        zoom: 1,
+        pitch: 0,
+        duration: 3000,
         center: convertCoordinates(continent.coordinates),
       });
 
@@ -78,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // 2
     function updateCitySelect() {
       selectedCountry = countrySelector.value;
       selectedRegion = regionSelector.value;
@@ -88,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const country = continent.countries.find((country) => country.name === selectedCountry);
 
       map.easeTo({
-        zoom: 3, // Desired zoom level
+        zoom: 3,
+        pitch: 0,
         duration: 2000,
         center: convertCoordinates(country.coordinates),
       });
@@ -103,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // 3
     function updateWarehouseSelect() {
       selectedCountry = countrySelector.value;
       selectedRegion = regionSelector.value;
@@ -117,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const city = country.cities.find((city) => city.name === selectedCity);
 
       map.easeTo({
-        zoom: 8, // Desired zoom level
+        zoom: 8,
+        pitch: 0,
         duration: 2000,
         center: convertCoordinates(city.coordinates),
       });
@@ -133,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // 4
     function zoomToWareHouse() {
       selectedCountry = countrySelector.value;
       selectedRegion = regionSelector.value;
