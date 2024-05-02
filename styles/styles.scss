@@ -551,11 +551,8 @@ html {
             width: 90%;
             height: 80%;
             overflow: hidden;
-            overflow-x: scroll;
+            overflow: hidden;
             scroll-behavior: smooth;
-            &::-webkit-scrollbar{
-              display: none;
-            }
 
             form {
               width: 100%;
@@ -563,27 +560,43 @@ html {
               flex-shrink: 0;
               gap: 10%;
               padding: 24px 32px;
+              align-items: flex-start;
 
               overflow-y: scroll;
-              &::-webkit-scrollbar{
+              &::-webkit-scrollbar {
                 width: 7px;
               }
-              &::-webkit-scrollbar-track{
+              &::-webkit-scrollbar-track {
                 background-color: $--dark-gray;
                 border-left: 3px solid $--black;
                 border-right: 3px solid $--black;
               }
-              &::-webkit-scrollbar-thumb{
+              &::-webkit-scrollbar-thumb {
                 background-color: $--orange;
                 border-radius: 16px;
               }
+
               .fieldwrapper {
                 width: 100%;
                 align-items: flex-start;
                 gap: 8px;
+
+                position: relative;
+                &::before {
+                  position: absolute;
+                  content: "";
+                  left: 0;
+                  bottom: 14px;
+                  height: 8px;
+                  aspect-ratio: 1;
+                  border-radius: 50%;
+                  border: 3px dotted $--white;
+                }
+
                 * {
                   text-transform: capitalize;
                 }
+
                 .label,
                 label {
                   font-size: 0.8rem;
@@ -597,6 +610,7 @@ html {
                   background-color: transparent;
                   border: none;
                   border-bottom: $--border;
+
                   &:focus {
                     outline: none;
                     border: none;
@@ -614,7 +628,7 @@ html {
                 width: 100%;
                 background-color: $--orange;
                 flex-shrink: 0;
-                p{
+                p {
                   margin: 0;
                 }
                 img {
@@ -624,6 +638,27 @@ html {
                 &:hover {
                   background-color: $--black;
                   border: 1px solid $--light-gray;
+                }
+              }
+
+              .goBack {
+                width: fit-content;
+                padding: 8px;
+                &::before {
+                  display: none;
+                }
+                background-color: transparent;
+                border: 1px solid $--black;
+                img {
+                  height: 8px;
+                  width: 16px;
+                }
+                p {
+                  font-size: 0.8rem;
+                }
+                &:hover {
+                  border-color: $--black;
+                  border-bottom: $--border;
                 }
               }
             }

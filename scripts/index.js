@@ -2,6 +2,7 @@ const menuButton = document.getElementById("menuButton");
 const navs = document.querySelectorAll("nav");
 const vehiclesCont = document.getElementById("vehicles");
 let buttons = [];
+let cars = [];
 const buttonsCont = document.getElementById("numbersContainer");
 let scrollDirection = 1;
 let vehicleInView = 1;
@@ -14,6 +15,7 @@ const proceedToConfirm = document.getElementById("proceedToConfirm");
 const proceedToCheckout = document.getElementById("proceedToCheckout");
 const addressForm = document.getElementById("addressForm");
 const confirmDetails = document.getElementById("confirmDetails");
+const backToAddress = document.getElementById("backToAddress");
 
 const carModel = document.getElementById("carModel");
 const shippingData = document.getElementById("shippingData");
@@ -26,6 +28,7 @@ function getVehicles() {
       .then((response) => response.json())
       .then((data) => {
         const vehicles = data.vehicles;
+        cars = data.vehicles;
         let index = 1;
 
         vehicles.forEach((vehicle) => {
@@ -121,6 +124,16 @@ function scrollVehicles(index, direction) {
   buttons[vehicleInView - 1].classList.add("active");
 }
 
+function openAddressForm() {
+  addressForm.scrollIntoView();
+  formHint.innerHTML = "Select a shipping address for your car";
+}
+
+function openConfirmDetails() {
+  confirmDetails.scrollIntoView();
+  formHint.innerHTML = "Confirm your shipping details";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   await getVehicles();
 
@@ -163,14 +176,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       //if a value for warehouse exists
       console.log(warehouse);
       console.log("Proceed to chekout");
-      formHint.innerHTML = "Confirm your shipping details";
-      confirmDetails.scrollIntoView();
+      openConfirmDetails();
 
-      // carModel.innerHTML = vehicleInView.model;
+      carModel.innerHTML = cars[vehicleInView - 1].name;
+      let formattedStation = `${warehouse} - ${city}, ${country}`;
+      shippingData.innerHTML = formattedStation;
+
+      // Pick a random day between today and three weeks from now.
+      // Calculate the number of days from today to the randomly selected date.
+      // Return date(DD Month) and numberOfDays
     } else {
       console.log("Shipping details missing");
     }
   });
+  backToAddress.addEventListener("click", openAddressForm);
 });
 
 menuButton.addEventListener("click", openOrCloseMenu);

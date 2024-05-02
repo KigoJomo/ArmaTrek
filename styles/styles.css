@@ -584,12 +584,8 @@ html .body main #shipping .right .forms {
   width: 90%;
   height: 80%;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow: hidden;
   scroll-behavior: smooth;
-}
-html body main #shipping .right .forms::-webkit-scrollbar,
-html .body main #shipping .right .forms::-webkit-scrollbar {
-  display: none;
 }
 html body main #shipping .right .forms form,
 html .body main #shipping .right .forms form {
@@ -598,6 +594,7 @@ html .body main #shipping .right .forms form {
   flex-shrink: 0;
   gap: 10%;
   padding: 24px 32px;
+  align-items: flex-start;
   overflow-y: scroll;
 }
 html body main #shipping .right .forms form::-webkit-scrollbar,
@@ -620,6 +617,18 @@ html .body main #shipping .right .forms form .fieldwrapper {
   width: 100%;
   align-items: flex-start;
   gap: 8px;
+  position: relative;
+}
+html body main #shipping .right .forms form .fieldwrapper::before,
+html .body main #shipping .right .forms form .fieldwrapper::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 14px;
+  height: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px dotted #fafcff;
 }
 html body main #shipping .right .forms form .fieldwrapper *,
 html .body main #shipping .right .forms form .fieldwrapper * {
@@ -682,4 +691,30 @@ html body main #shipping .right .forms form button:hover,
 html .body main #shipping .right .forms form button:hover {
   background-color: #03080e;
   border: 1px solid #4f5153;
+}
+html body main #shipping .right .forms form .goBack,
+html .body main #shipping .right .forms form .goBack {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid #03080e;
+}
+html body main #shipping .right .forms form .goBack::before,
+html .body main #shipping .right .forms form .goBack::before {
+  display: none;
+}
+html body main #shipping .right .forms form .goBack img,
+html .body main #shipping .right .forms form .goBack img {
+  height: 8px;
+  width: 16px;
+}
+html body main #shipping .right .forms form .goBack p,
+html .body main #shipping .right .forms form .goBack p {
+  font-size: 0.8rem;
+}
+html body main #shipping .right .forms form .goBack:hover,
+html .body main #shipping .right .forms form .goBack:hover {
+  border-color: #03080e;
+  border-bottom: 1px solid #4f5153;
 }
