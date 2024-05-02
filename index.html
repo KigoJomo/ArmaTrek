@@ -60,8 +60,8 @@
         <div id="map"></div>
 
         <div class="right column">
-          <h1>shipping</h1>
-          <p>Select a shipping address for your car</p>
+          <h1 id="FormTitle">shipping</h1>
+          <p id="formHint">Select a shipping address for your car</p>
 
           <div class="forms row">
             <form id="addressForm" action="" method="post" class="column">
@@ -100,8 +100,26 @@
                 </select>
               </div>
 
-              <button id="proceed" type="submit">
+              <button id="proceedToConfirm" type="submit">
                 <p>Proceed</p>
+                <img src="./images/right_arrowAsset 2.png" alt="" />
+              </button>
+            </form>
+            <form action="" id="confirmDetails">
+              <div class="fieldwrapper column">
+                <div class="label">car model</div>
+                <div class="data" id="carModel"></div>
+              </div>
+              <div class="fieldwrapper column">
+                <div class="label">pickup station</div>
+                <div class="data" id="shippingData"></div>
+              </div>
+              <div class="fieldwrapper column">
+                <div class="label">estimated delivery time</div>
+                <div class="data" id="deliveryTime"></div>
+              </div>
+              <button id="proceedToCheckout">
+                <p>checkout</p>
                 <img src="./images/right_arrowAsset 2.png" alt="" />
               </button>
             </form>

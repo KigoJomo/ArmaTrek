@@ -1,3 +1,5 @@
+const menuButton = document.getElementById("menuButton");
+const navs = document.querySelectorAll("nav");
 const vehiclesCont = document.getElementById("vehicles");
 let buttons = [];
 const buttonsCont = document.getElementById("numbersContainer");
@@ -5,8 +7,17 @@ let scrollDirection = 1;
 let vehicleInView = 1;
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
-const menuButton = document.getElementById("menuButton");
-const navs = document.querySelectorAll("nav");
+
+const FormTitle = document.getElementById("FormTitle");
+const formHint = document.getElementById("formHint");
+const proceedToConfirm = document.getElementById("proceedToConfirm");
+const proceedToCheckout = document.getElementById("proceedToCheckout");
+const addressForm = document.getElementById("addressForm");
+const confirmDetails = document.getElementById("confirmDetails");
+
+const carModel = document.getElementById("carModel");
+const shippingData = document.getElementById("shippingData");
+const DeliveryTime = document.getElementById("deliveryTime");
 
 //function to fetch vehicles
 function getVehicles() {
@@ -138,6 +149,27 @@ document.addEventListener("DOMContentLoaded", async () => {
       //found an easier way
       document.getElementById("shipping").scrollIntoView();
     });
+  });
+
+  proceedToConfirm.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let region = document.getElementById("regionSelector").value;
+    let country = document.getElementById("countrySelector").value;
+    let city = document.getElementById("citySelector").value;
+    let warehouse = document.getElementById("warehouseSelector").value;
+
+    if (warehouse && warehouse !== "Select a Warehouse" && warehouse !== "") {
+      //if a value for warehouse exists
+      console.log(warehouse);
+      console.log("Proceed to chekout");
+      formHint.innerHTML = "Confirm your shipping details";
+      confirmDetails.scrollIntoView();
+
+      // carModel.innerHTML = vehicleInView.model;
+    } else {
+      console.log("Shipping details missing");
+    }
   });
 });
 

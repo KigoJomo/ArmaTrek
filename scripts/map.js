@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       warehouseSelector.innerHTML = "";
       const placeholder = document.createElement("option");
       placeholder.text = "Select a Warehouse";
+      placeholder.value = "Select a Warehouse";
       placeholder.setAttribute("disabled", "");
       placeholder.setAttribute("selected", "");
 
