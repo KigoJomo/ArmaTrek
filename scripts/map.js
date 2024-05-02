@@ -149,7 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const warehouse = city.warehouses.find((warehouse) => warehouse.name === selectedWarehouse);
 
       map.easeTo({
-        zoom: 18, // Desired zoom level
+        zoom: 18,
+        pitch: 100,
         duration: 2000,
         center: convertCoordinates(warehouse.coordinates),
       });
