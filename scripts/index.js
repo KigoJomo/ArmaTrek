@@ -7,7 +7,6 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const menuButton = document.getElementById("menuButton");
 const navs = document.querySelectorAll("nav");
-const orderBtns = document.querySelectorAll(".buyCar");
 
 //function to fetch vehicles
 function getVehicles() {
@@ -132,12 +131,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  const orderBtns = document.querySelectorAll(".buyCar");
   orderBtns.forEach((orderBtn) => {
     orderBtn.addEventListener("click", () => {
-      console.log('Button clicked');
+      console.log("Vehicle to order: ", vehicleInView);
+      //found an easier way
+      document.getElementById("shipping").scrollIntoView();
     });
   });
-
 });
 
 menuButton.addEventListener("click", openOrCloseMenu);

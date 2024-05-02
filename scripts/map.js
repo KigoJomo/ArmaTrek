@@ -42,6 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     regionSelector.value = "";
 
+    function convertCoordinates(string) {
+      const [latitude, longitude] = string.split(",");
+      // Convert the latitude and longitude to floating-point numbers
+      const lat = parseFloat(latitude);
+      const lng = parseFloat(longitude);
+
+      // Create an object with the lat and lng properties
+      const formattedCoordinates = { lat: lat, lng: lng };
+      return formattedCoordinates;
+    }
+
     function updateCountrySelect() {
       selectedRegion = regionSelector.value;
       if (selectedRegion === "") {
@@ -50,6 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const continent = data.continents.find(
         (continent) => continent.name === selectedRegion
       );
+
+      map.easeTo({
+        zoom: 1, // Desired zoom level
+        duration: 2000,
+        center: convertCoordinates(continent.coordinates),
+      });
+
       // console.log(continent.countries[0].name);
       countrySelector.innerHTML = "";
       continent.countries.forEach(country => {
@@ -68,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
         (continent) => continent.name === selectedRegion
       );
       const country = continent.countries.find((country) => country.name === selectedCountry);
+
+      map.easeTo({
+        zoom: 3, // Desired zoom level
+        duration: 2000,
+        center: convertCoordinates(country.coordinates),
+      });
 
       // console.log(country.cities);
       citySelector.innerHTML = "";
@@ -92,6 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const city = country.cities.find((city) => city.name === selectedCity);
 
+      map.easeTo({
+        zoom: 8, // Desired zoom level
+        duration: 2000,
+        center: convertCoordinates(city.coordinates),
+      });
+
       // console.log(city.warehouses);
       warehouseSelector.innerHTML = "";
       city.warehouses.forEach((warehouse) => {
@@ -100,6 +130,28 @@ document.addEventListener("DOMContentLoaded", () => {
         option.value = warehouse.name;
         option.text = warehouse.name;
         warehouseSelector.appendChild(option);
+      });
+    }
+
+    function zoomToWareHouse() {
+      selectedCountry = countrySelector.value;
+      selectedRegion = regionSelector.value;
+      selectedCity = citySelector.value;
+      selectedWarehouse = warehouseSelector.value;
+
+      const continent = data.continents.find(
+        (continent) => continent.name === selectedRegion
+      );
+      const country = continent.countries.find(
+        (country) => country.name === selectedCountry
+      );
+      const city = country.cities.find((city) => city.name === selectedCity);
+      const warehouse = city.warehouses.find((warehouse) => warehouse.name === selectedWarehouse);
+
+      map.easeTo({
+        zoom: 18, // Desired zoom level
+        duration: 2000,
+        center: convertCoordinates(warehouse.coordinates),
       });
     }
 
@@ -114,6 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
     citySelector.addEventListener("change", () => {
       updateWarehouseSelect();
     })
+    warehouseSelector.addEventListener("change", () => {
+      zoomToWareHouse();
+    });
 
   })
   .catch((error) => {

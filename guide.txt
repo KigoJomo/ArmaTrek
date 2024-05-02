@@ -1,3 +1,4 @@
-
-
-I need you to make an adjustment to this data. Add "coordinates" to all continents, countries and cities.
+How do I change these coordinates:
+"-5.736839938457524, 33.729631992552385"
+to this format:
+{ lat: 40.7128, lng: -74.006 }
