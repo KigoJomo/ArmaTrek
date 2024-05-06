@@ -1,154 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="ArmaTrek - Manufacturer and distributor of armoured, luxury EV camping off-road trucks. Explore the world with confidence."
-    />
-    <meta
-      name="keywords"
-      content="ArmaTrek, armored trucks, luxury EV, camping off-road, futuristic vehicles"
-    />
-    <meta
-      property="og:image"
-      content="https://armatrek.vercel.app/images/showroom.jpeg"
-    />
-    <title>ArmaTrek - Explore with Confidence</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
-    <script src="./scripts/map.js" defer></script>
-  </head>
 
-  <body class="body column">
-    <header class="row">
-      <button id="menuButton" class="material-symbols-outlined">menu</button>
-      <nav class="row navClosed">
-        <a href="#featured">featured</a>
-        <a href="#shipping">shipping</a>
-      </nav>
-      <a href="./index.html">
-        <img src="./images/armatrek.png" alt="" />
-      </a>
-      <nav class="row navClosed">
-        <a href="#showrooms">showrooms</a>
-        <a href="#contact">contact</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="ArmaTrek - Manufacturer and distributor of armoured, luxury EV camping off-road trucks. Explore the world with confidence." />
+  <meta name="keywords" content="ArmaTrek, armored trucks, luxury EV, camping off-road, futuristic vehicles" />
+  <meta property="og:image" content="https://armatrek.vercel.app/images/showroom.jpeg" />
+  <title>ArmaTrek - Explore with Confidence</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <script src="./scripts/map.js" defer></script>
+</head>
 
-    <main class="column">
-      <section id="featured" class="row">
-        <div class="vehicles row" id="vehicles"></div>
-        <div class="buttons row">
-          <button id="prevBtn" class="disabled"></button>
-          <button id="nextBtn"></button>
+<body class="body column">
+  <header class="row">
+    <button id="menuButton" class="material-symbols-outlined">menu</button>
+    <nav class="row navClosed">
+      <a href="#featured">featured</a>
+      <a href="#shipping">shipping</a>
+    </nav>
+    <a href="./index.html">
+      <img src="./images/armatrek.png" alt="" />
+    </a>
+    <nav class="row navClosed">
+      <a href="#showrooms">showrooms</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main class="column">
+    <section id="featured" class="row">
+      <div class="vehicles row" id="vehicles"></div>
+      <div class="buttons row">
+        <button id="prevBtn" class="disabled"></button>
+        <button id="nextBtn"></button>
+      </div>
+      <div id="numbersContainer" class="numbers column"></div>
+    </section>
+
+    <section id="shipping" class="row">
+      <div id="map"></div>
+
+      <div class="right column">
+        <h1 id="FormTitle">shipping</h1>
+        <p id="formHint">Select a shipping address for your car</p>
+
+        <p class="toast row" id="toast">
+          alert
+        </p>
+
+        <div class="forms row">
+
+          <form id="addressForm" action="" method="post" class="column">
+            <div class="fieldwrapper column">
+              <!-- to select a continent -->
+              <label for="regionSelector">Region</label>
+              <select name="regionSelector" id="regionSelector" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <div class="fieldwrapper column">
+              <label for="countrySelector">Select a country</label>
+              <select name="countrySelector" id="countrySelector" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <div class="fieldwrapper column">
+              <label for="citySelector">Which city is nearest to you?</label>
+              <select name="citySelector" id="citySelector" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <div class="fieldwrapper column">
+              <label for="warehouseSelector">Choose a warehouse to pick up your vehicle</label>
+              <select name="warehouseSelector" id="warehouseSelector" required>
+                <!-- Options will be populated dynamically -->
+              </select>
+            </div>
+
+            <button id="proceedToConfirm" type="submit">
+              <p>Proceed</p>
+              <img src="./images/right_arrowAsset 2.png" alt="" />
+            </button>
+          </form>
+
+          <form action="" id="confirmDetails" class="column">
+            <button id="backToAddress" class="goBack" type="button">
+              <img src="./images/left_arrowAsset 3.png" alt="">
+              <p>go back</p>
+            </button>
+
+            <div class="fieldwrapper column">
+              <div class="label">car model</div>
+              <div class="data" id="carModel"></div>
+              <button class="edit" id="editCar">edit</button>
+            </div>
+            <div class="fieldwrapper column">
+              <div class="label">pickup station</div>
+              <div class="data" id="shippingData"></div>
+              <button class="edit" id="editLocation" type="button">edit</button>
+            </div>
+            <div class="fieldwrapper column">
+              <div class="label">estimated delivery time</div>
+              <div class="data" id="deliveryTime"></div>
+            </div>
+            <button id="proceedToCheckout" type="button">
+              <p>checkout</p>
+              <img src="./images/right_arrowAsset 2.png" alt="" />
+            </button>
+          </form>
+
+          <form action="" id="checkoutForm" class="column">
+            <button id="backToConfirm" class="goBack" type="button">
+              <img src="./images/left_arrowAsset 3.png" alt="">
+              <p>go back</p>
+            </button>
+
+            <div class="formSection column">
+              <p>personal information</p>
+              <div class="accountDetails">
+                <div class="fieldwrapper">
+                  <label for="fname">first name</label>
+                  <input required type="text" id="fname" name="fname">
+                </div>
+                <div class="fieldwrapper">
+                  <label for="lname">last name</label>
+                  <input required type="text" id="lname" name="lname">
+                </div>
+                <div class="fieldwrapper">
+                  <label for="email">email</label>
+                  <input required type="email" id="email" name="email" autocomplete="email">
+                </div>
+              </div>
+            </div>
+
+            <div class="formSection column">
+              <p>payment account details</p>
+              <div class="accountDetails">
+                <div class="fieldwrapper">
+                  <label for="cardNumber">credit/debit card number</label>
+                  <input required type="text" id="cardNumber" name="cardNumber" maxlength="19" autocomplete="cc-number">
+                </div>
+                <div class="fieldwrapper">
+                  <label for="cvvCode">CVV code</label>
+                  <input required type="text" id="cvvCode" name="cvvCode" autocomplete="cc-csc" maxlength="3">
+                </div>
+                <div class="fieldwrapper">
+                  <label for="cardExpiry">valid till</label>
+                  <input required type="text" id="cardExpiry" name="cardExpiry" maxlength="7" autocomplete="cc-exp">
+                </div>
+                <div class="fieldwrapper">
+                  <div class="label">amount</div>
+                  <div class="data" id="priceDisplay"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkboxContainer row">
+              <input type="checkbox" id="termsCheckbox" name="termsCheckbox">
+              <label for="termsCheckbox">I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and
+                <a href="privacy.html" target="_blank">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" id="placeOrder">
+              <p>place order</p>
+            </button>
+          </form>
+
+          <div class="form" id="orderPlaced"></div>
+
         </div>
-        <div id="numbersContainer" class="numbers column"></div>
-      </section>
+      </div>
+    </section>
 
-      <section id="shipping" class="row">
-        <div id="map"></div>
+    <section id="showrooms" class="column">
+      <h1>showrooms</h1>
+      <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
+    </section>
 
-        <div class="right column">
-          <h1 id="FormTitle">shipping</h1>
-          <p id="formHint">Select a shipping address for your car</p>
+    <section id="contact" class="column">
+      <h1>contact</h1>
+      <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank">Contribute to this project</a>
+    </section>
+  </main>
 
-          <div class="forms row">
-            <form id="addressForm" action="" method="post" class="column">
-              <div class="fieldwrapper column">
-                <!-- to select a continent -->
-                <label for="regionSelector">Region</label>
-                <select name="regionSelector" id="regionSelector" required>
-                  <!-- Options will be populated dynamically -->
-                </select>
-              </div>
+  <script src="./scripts/index.js"></script>
+</body>
 
-              <div class="fieldwrapper column">
-                <label for="countrySelector">Select a country</label>
-                <select name="countrySelector" id="countrySelector" required>
-                  <!-- Options will be populated dynamically -->
-                </select>
-              </div>
-
-              <div class="fieldwrapper column">
-                <label for="citySelector">Which city is nearest to you?</label>
-                <select name="citySelector" id="citySelector" required>
-                  <!-- Options will be populated dynamically -->
-                </select>
-              </div>
-
-              <div class="fieldwrapper column">
-                <label for="warehouseSelector"
-                  >Choose a warehouse to pick up your vehicle</label
-                >
-                <select
-                  name="warehouseSelector"
-                  id="warehouseSelector"
-                  required
-                >
-                  <!-- Options will be populated dynamically -->
-                </select>
-              </div>
-
-              <button id="proceedToConfirm" type="submit">
-                <p>Proceed</p>
-                <img src="./images/right_arrowAsset 2.png" alt="" />
-              </button>
-            </form>
-
-            <form action="" id="confirmDetails" class="column">
-              <button id="backToAddress" class="goBack" type="button">
-                <img src="./images/left_arrowAsset 3.png" alt="">
-                <p>go back</p>
-              </button>
-
-              <div class="fieldwrapper column">
-                <div class="label">car model</div>
-                <div class="data" id="carModel"></div>
-              </div>
-              <div class="fieldwrapper column">
-                <div class="label">pickup station</div>
-                <div class="data" id="shippingData"></div>
-              </div>
-              <div class="fieldwrapper column">
-                <div class="label">estimated delivery time</div>
-                <div class="data" id="deliveryTime">21 days (24 may)</div>
-              </div>
-              <button id="proceedToCheckout" type="submit">
-                <p>checkout</p>
-                <img src="./images/right_arrowAsset 2.png" alt="" />
-              </button>
-            </form>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="showrooms" class="column">
-        <h1>showrooms</h1>
-        <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank"
-          >Contribute to this project</a
-        >
-      </section>
-
-      <section id="contact" class="column">
-        <h1>contact</h1>
-        <a href="https://github.com/KigoJomo/ArmaTrek/" target="_blank"
-          >Contribute to this project</a
-        >
-      </section>
-    </main>
-
-    <script src="./scripts/index.js"></script>
-  </body>
 </html>

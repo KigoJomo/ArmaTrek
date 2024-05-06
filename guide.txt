@@ -1,0 +1,7 @@
+//TO-DO
+
+terms and conditions html
+privacy policy html
+"Your order has been successfully placed"
+
+Retry django deployment

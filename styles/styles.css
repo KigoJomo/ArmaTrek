@@ -59,7 +59,7 @@ h2 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -577,50 +577,102 @@ html .body main #shipping #map:after {
 html body main #shipping .right,
 html .body main #shipping .right {
   border: none;
-  gap: 24px;
+  overflow: hidden;
+  gap: 16px;
+  position: relative;
+}
+html body main #shipping .right .toast,
+html .body main #shipping .right .toast {
+  position: absolute;
+  z-index: 10;
+  top: -5rem;
+  width: 300px;
+  overflow: hidden;
+  padding: 16px 0px;
+  border: 1px solid #e74d1e;
+  background-color: #1f2022;
+  box-shadow: 0px 2px 4px 0px rgba(250, 252, 255, 0.2745098039);
+  border-radius: 16px;
+  justify-content: center;
+  text-transform: capitalize;
+  transition: top 0.5s ease;
+}
+html body main #shipping .right .toast::before,
+html .body main #shipping .right .toast::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  width: 0%;
+  background-color: #e74d1e;
+  transition: width 3s ease;
+}
+html body main #shipping .right .toastVisible,
+html .body main #shipping .right .toastVisible {
+  top: 5rem;
+}
+html body main #shipping .right .toastVisible::before,
+html .body main #shipping .right .toastVisible::before {
+  width: 100%;
+}
+html body main #shipping .right h1,
+html .body main #shipping .right h1 {
+  font-size: 2.5rem;
+  line-height: 1.8rem;
+}
+html body main #shipping .right p,
+html .body main #shipping .right p {
+  font-size: 0.9rem;
 }
 html body main #shipping .right .forms,
 html .body main #shipping .right .forms {
-  width: 90%;
-  height: 80%;
-  overflow: hidden;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-html body main #shipping .right .forms form,
-html .body main #shipping .right .forms form {
   width: 100%;
   height: 100%;
-  flex-shrink: 0;
-  gap: 10%;
-  padding: 24px 32px;
+  gap: 4%;
   align-items: flex-start;
+  overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
-html body main #shipping .right .forms form::-webkit-scrollbar,
-html .body main #shipping .right .forms form::-webkit-scrollbar {
+html body main #shipping .right .forms::-webkit-scrollbar,
+html .body main #shipping .right .forms::-webkit-scrollbar {
   width: 7px;
 }
-html body main #shipping .right .forms form::-webkit-scrollbar-track,
-html .body main #shipping .right .forms form::-webkit-scrollbar-track {
+html body main #shipping .right .forms::-webkit-scrollbar-track,
+html .body main #shipping .right .forms::-webkit-scrollbar-track {
   background-color: #1f2022;
   border-left: 3px solid #03080e;
   border-right: 3px solid #03080e;
 }
-html body main #shipping .right .forms form::-webkit-scrollbar-thumb,
-html .body main #shipping .right .forms form::-webkit-scrollbar-thumb {
+html body main #shipping .right .forms::-webkit-scrollbar-thumb,
+html .body main #shipping .right .forms::-webkit-scrollbar-thumb {
   background-color: #e74d1e;
   border-radius: 16px;
 }
-html body main #shipping .right .forms form .fieldwrapper,
-html .body main #shipping .right .forms form .fieldwrapper {
+html body main #shipping .right .forms form,
+html .body main #shipping .right .forms form {
+  width: 95%;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 100%;
+  flex-shrink: 0;
+  gap: 48px;
+  padding: 24px 32px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+html body main #shipping .right .forms form .fieldwrapper, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper,
+html .body main #shipping .right .forms form .fieldwrapper,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper {
   width: 100%;
   align-items: flex-start;
-  gap: 8px;
+  gap: 0px;
   position: relative;
 }
-html body main #shipping .right .forms form .fieldwrapper::before,
-html .body main #shipping .right .forms form .fieldwrapper::before {
+html body main #shipping .right .forms form .fieldwrapper::before, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper::before,
+html .body main #shipping .right .forms form .fieldwrapper::before,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper::before {
   position: absolute;
   content: "";
   left: 0;
@@ -630,47 +682,138 @@ html .body main #shipping .right .forms form .fieldwrapper::before {
   border-radius: 50%;
   border: 3px dotted #fafcff;
 }
-html body main #shipping .right .forms form .fieldwrapper *,
-html .body main #shipping .right .forms form .fieldwrapper * {
+html body main #shipping .right .forms form .fieldwrapper *, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper *,
+html .body main #shipping .right .forms form .fieldwrapper *,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper * {
   text-transform: capitalize;
 }
-html body main #shipping .right .forms form .fieldwrapper .label,
+html body main #shipping .right .forms form .fieldwrapper .label, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .label,
 html body main #shipping .right .forms form .fieldwrapper label,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper label,
 html .body main #shipping .right .forms form .fieldwrapper .label,
-html .body main #shipping .right .forms form .fieldwrapper label {
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .label,
+html .body main #shipping .right .forms form .fieldwrapper label,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper label {
   font-size: 0.8rem;
   font-weight: 200;
   opacity: 0.7;
 }
-html body main #shipping .right .forms form .fieldwrapper .data,
+html body main #shipping .right .forms form .fieldwrapper .data, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data,
+html body main #shipping .right .forms form .fieldwrapper input,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input,
 html body main #shipping .right .forms form .fieldwrapper select,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select,
 html .body main #shipping .right .forms form .fieldwrapper .data,
-html .body main #shipping .right .forms form .fieldwrapper select {
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data,
+html .body main #shipping .right .forms form .fieldwrapper input,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input,
+html .body main #shipping .right .forms form .fieldwrapper select,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select {
   width: 100%;
   padding: 8px 24px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #4f5153;
 }
+html body main #shipping .right .forms form .fieldwrapper .data::-webkit-inner-spin-button, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data::-webkit-inner-spin-button, html body main #shipping .right .forms form .fieldwrapper .data::-webkit-outer-spin-button, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data::-webkit-outer-spin-button,
+html body main #shipping .right .forms form .fieldwrapper input::-webkit-inner-spin-button,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input::-webkit-inner-spin-button,
+html body main #shipping .right .forms form .fieldwrapper input::-webkit-outer-spin-button,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input::-webkit-outer-spin-button,
+html body main #shipping .right .forms form .fieldwrapper select::-webkit-inner-spin-button,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select::-webkit-inner-spin-button,
+html body main #shipping .right .forms form .fieldwrapper select::-webkit-outer-spin-button,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper .data::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper .data::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper input::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper input::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper select::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select::-webkit-inner-spin-button,
+html .body main #shipping .right .forms form .fieldwrapper select::-webkit-outer-spin-button,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select::-webkit-outer-spin-button {
+  display: none;
+}
 html body main #shipping .right .forms form .fieldwrapper .data:focus,
+html body main #shipping .right .forms form .fieldwrapper input:focus,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input:focus,
 html body main #shipping .right .forms form .fieldwrapper select:focus,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select:focus,
 html .body main #shipping .right .forms form .fieldwrapper .data:focus,
-html .body main #shipping .right .forms form .fieldwrapper select:focus {
+html .body main #shipping .right .forms form .fieldwrapper input:focus,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input:focus,
+html .body main #shipping .right .forms form .fieldwrapper select:focus,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select:focus {
   outline: none;
   border: none;
   border-bottom: 1px solid #e74d1e;
 }
-html body main #shipping .right .forms form .fieldwrapper .data option,
+html body main #shipping .right .forms form .fieldwrapper .data option, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data option,
+html body main #shipping .right .forms form .fieldwrapper input option,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input option,
 html body main #shipping .right .forms form .fieldwrapper select option,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select option,
 html .body main #shipping .right .forms form .fieldwrapper .data option,
-html .body main #shipping .right .forms form .fieldwrapper select option {
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .data option,
+html .body main #shipping .right .forms form .fieldwrapper input option,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input option,
+html .body main #shipping .right .forms form .fieldwrapper select option,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select option {
   background: #03080e;
 }
 html body main #shipping .right .forms form .fieldwrapper .data option:hover,
+html body main #shipping .right .forms form .fieldwrapper input option:hover,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input option:hover,
 html body main #shipping .right .forms form .fieldwrapper select option:hover,
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select option:hover,
 html .body main #shipping .right .forms form .fieldwrapper .data option:hover,
-html .body main #shipping .right .forms form .fieldwrapper select option:hover {
+html .body main #shipping .right .forms form .fieldwrapper input option:hover,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input option:hover,
+html .body main #shipping .right .forms form .fieldwrapper select option:hover,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper select option:hover {
   background: #03080e;
+}
+html body main #shipping .right .forms form .fieldwrapper input[type=email], html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input[type=email],
+html .body main #shipping .right .forms form .fieldwrapper input[type=email],
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper input[type=email] {
+  text-transform: lowercase;
+}
+html body main #shipping .right .forms form .fieldwrapper .edit, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .edit,
+html .body main #shipping .right .forms form .fieldwrapper .edit,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .edit {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid #03080e;
+}
+html body main #shipping .right .forms form .fieldwrapper .edit::before, html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .edit::before,
+html .body main #shipping .right .forms form .fieldwrapper .edit::before,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper .edit::before {
+  width: 0%;
+  height: 1px;
+  background-color: #fafcff;
+  z-index: 1;
+  border: none;
+  bottom: 0;
+  transition: all 0.5s ease;
+}
+html body main #shipping .right .forms form .fieldwrapper .edit:hover,
+html .body main #shipping .right .forms form .fieldwrapper .edit:hover {
+  border: 1px solid #03080e;
+}
+html body main #shipping .right .forms form .fieldwrapper .edit:hover::before,
+html .body main #shipping .right .forms form .fieldwrapper .edit:hover::before {
+  width: 100%;
 }
 html body main #shipping .right .forms form button,
 html .body main #shipping .right .forms form button {
@@ -717,4 +860,29 @@ html body main #shipping .right .forms form .goBack:hover,
 html .body main #shipping .right .forms form .goBack:hover {
   border-color: #03080e;
   border-bottom: 1px solid #4f5153;
+}
+html body main #shipping .right .forms form .formSection,
+html .body main #shipping .right .forms form .formSection {
+  width: 100%;
+  gap: 16px;
+  align-items: flex-start;
+}
+html body main #shipping .right .forms form .formSection p,
+html .body main #shipping .right .forms form .formSection p {
+  text-transform: capitalize;
+}
+html body main #shipping .right .forms form .formSection .accountDetails,
+html .body main #shipping .right .forms form .formSection .accountDetails {
+  width: 100%;
+  padding: 0px 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 16px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+}
+html body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper,
+html .body main #shipping .right .forms form .formSection .accountDetails .fieldwrapper {
+  min-width: 200px;
+  max-width: 100%;
 }

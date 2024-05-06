@@ -8,7 +8,8 @@
         "armor": "Ballistic composite shell",
         "interior": "Customizable luxury living space with panoramic sunroof"
       },
-      "image": "terra_nomad.webp"
+      "image": "terra_nomad.webp",
+      "price": "2,400,000"
     },
     {
       "name": "Aurora",
@@ -18,47 +19,52 @@
         "armor": "Self-repairing nanofiber coating",
         "interior": "Holographic entertainment system, AI-powered climate control"
       },
-      "image": "aurora.webp"
+      "image": "aurora.webp",
+      "price": "3,200,000"
     },
     {
-        "name": "Titan's Rest",
-        "description": "A fortress on wheels, Titan's Rest provides ultimate protection and comfort.",
-        "specs": {
-            "range": "600km (370 miles)",
-            "armor": "Military-grade composite armor plating",
-            "interior": "Blast-proof windows, hidden weapon storage"
-        },
-        "image": "titan's_rest.webp"
+      "name": "Titan's Rest",
+      "description": "A fortress on wheels, Titan's Rest provides ultimate protection and comfort.",
+      "specs": {
+        "range": "600km (370 miles)",
+        "armor": "Military-grade composite armor plating",
+        "interior": "Blast-proof windows, hidden weapon storage"
+      },
+      "image": "titan's_rest.webp",
+      "price": "2,800,000"
     },
     {
-        "name": "Leva",
-        "description": "Light and agile, Leva glides through landscapes with luxurious ease.",
-        "specs": {
-            "range": "700km (430 miles)",
-            "armor": "Lightweight, high-tensile steel shell",
-            "interior": "Fold-out balcony, rooftop solar panels for extended off-grid living"
-        },
-        "image": "leva.webp"
+      "name": "Leva",
+      "description": "Light and agile, Leva glides through landscapes with luxurious ease.",
+      "specs": {
+        "range": "700km (430 miles)",
+        "armor": "Lightweight, high-tensile steel shell",
+        "interior": "Fold-out balcony, rooftop solar panels for extended off-grid living"
+      },
+      "image": "leva.webp",
+      "price": "2,600,000"
     },
     {
-        "name": "oasis",
-        "description": "A haven on wheels, Oasis offers a luxurious escape to any environment.",
-        "specs":{
-            "range": "500km (310 miles)",
-            "armor": "Weatherproof and impact-resistant hull",
-            "interior": "Water purification system, onboard hydroponic garden"
-        },
-        "image": "oasis.webp"
+      "name": "oasis",
+      "description": "A haven on wheels, Oasis offers a luxurious escape to any environment.",
+      "specs": {
+        "range": "500km (310 miles)",
+        "armor": "Weatherproof and impact-resistant hull",
+        "interior": "Water purification system, onboard hydroponic garden"
+      },
+      "image": "oasis.webp",
+      "price": "2,500,000"
     },
     {
-        "name": "nova",
-        "description": "Blazing a trail into the future, Nova is a luxurious symbol of sustainable exploration.",
-        "specs": {
-            "range": "1200km (750 miles)",
-            "armor": "Bio-composite shell, self-regenerating from natural resources",
-            "interior": "Recycled materials throughout, advanced waste management system"
-        },
-        "image": "nova.webp"
+      "name": "nova",
+      "description": "Blazing a trail into the future, Nova is a luxurious symbol of sustainable exploration.",
+      "specs": {
+        "range": "1200km (750 miles)",
+        "armor": "Bio-composite shell, self-regenerating from natural resources",
+        "interior": "Recycled materials throughout, advanced waste management system"
+      },
+      "image": "nova.webp",
+      "price": "3,500,000"
     }
   ]
 }
